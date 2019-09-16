@@ -14,10 +14,197 @@
     \setsansfont{Times New Roman}
     \setmonofont{Courier New}
 \usepackage{pgfplots} % plot
-\usepackage{cases}
+% mathcha
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+% mathcha
+\usepackage{adjustbox} % for table size
+\usepackage{float} % for H figure
 \pgfplotsset{compat=1.15}
 \usepackage{graphicx}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{Аверьянов Т.С.}
+\author{GH-TIMe, little KoryakinAK}
 \begin{document}
+\begin{center}
+\textbf{План}
+\end{center}
+
+\begin{enumerate}
+\item Функция потребления Кейнса и реальные данные;
+\item Общий вид эконометрической модели с отражённым влиянием на эндогенные переменные неучтённых факторов;
+\item Временной ряд и структура его уровней;
+\end{enumerate}
+
+	На прошлой лекции обсудили отражение в моделе фактора времени и использование модели, как инструмента анализа изучаемого объекта. 
+
+	На сегодняшней лекции мы исследуем соответсвие математических моделей реальным данным и научимся отражать в моделе воздействие на искомые характреристики объекта (на текущие эндогенные переменные) неучтённых факторов. Наши исследования мы проведём на простейшей макромодели Кейнса
+
+
+\begin{equation}
+\begin{cases}
+Y\ =\ C+I; & \\
+C\ =\ a_{0} \ +\ a_{1} \ \cdot Y; & 0\ < \ a_{1} \ < \ 1
+\end{cases}
+\end{equation}
+	Согласуется ли эта функция с реальной статистикой?
+
+	Исследование проведём по следующей схеме: на плоскости зададим декартову систему координат и по оси обцисс отложим содержащиеся в табл.1 уровни ВВП РФ, на оси ординат отложим соотсветсвующие значения уравнений потребления; Если модель Кейнса соответсвует реальным данным, то точки графика расположатся на восходящей прямой. 
+\begin{table}[!h]
+        \centering  
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+ \textbf{Год} & \textbf{2003} & \textbf{2004} & \textbf{2005} & \textbf{2006} & \textbf{2007} & \textbf{2008} \\
+\hline 
+ $\displaystyle \textbf{Y}$ & 6410 & 7288 & 8196 & 8915 & 10002 & 10767 \\
+\hline 
+ $\displaystyle \textbf{C}$ & 4911 & 5554 & 6290 & 6739 & 7305 & 7773 \\
+\hline 
+ $\displaystyle \textbf{I}$ & 1499 & 1734 & 1906 & 2175 & 2995 & 2994 \\
+ \hline
+\end{tabular}
+\caption{Реальная статистика gks}
+        \end{table}
+
+
+\begin{figure}[H]
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,312.8249969482422); %set diagram left start at 0, and has height of 312.8249969482422
+
+%Shape: Axis 2D [id:dp8743509274123296] 
+\draw  (50,251.98) -- (384.3,251.98)(83.43,68) -- (83.43,272.43) (377.3,246.98) -- (384.3,251.98) -- (377.3,256.98) (78.43,75) -- (83.43,68) -- (88.43,75)  ;
+%Straight Lines [id:da44467330718849607] 
+\draw    (81.3,206.43) -- (347.3,123.43) ;
+
+
+%Straight Lines [id:da6441726223509632] 
+\draw    (140.3,187.43) -- (140,230) ;
+\draw [shift={(140,230)}, rotate = 90.4] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+
+%Straight Lines [id:da45408138515545904] 
+\draw    (179.3,134.43) -- (179,176) ;
+
+\draw [shift={(179.3,134.43)}, rotate = 90.41] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da3675690211779734] 
+\draw    (229.3,159.43) -- (229,201) ;
+\draw [shift={(229,201)}, rotate = 90.41] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+
+%Straight Lines [id:da8370177312160028] 
+\draw    (259.3,131.43) -- (259.3,151.43) ;
+
+\draw [shift={(259.3,131.43)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da37313575108824626] 
+\draw    (290.3,99.43) -- (290,141) ;
+
+\draw [shift={(290.3,99.43)}, rotate = 90.41] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da6953659916864847] 
+\draw    (330.3,128.43) -- (330.3,152.43) ;
+\draw [shift={(330.3,152.43)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+
+
+% Text Node
+\draw (112,213) node  [align=left] {$\displaystyle u_{1}$};
+% Text Node
+\draw (149,146) node  [align=left] {$\displaystyle u_{2}$};
+% Text Node
+\draw (210,194) node  [align=left] {$\displaystyle u_{3}$};
+% Text Node
+\draw (244,122) node  [align=left] {$\displaystyle u_{4}$};
+% Text Node
+\draw (312,101) node  [align=left] {$\displaystyle u_{5}$};
+% Text Node
+\draw (363,153) node  [align=left] {$\displaystyle u_{6}$};
+% Text Node
+\draw (99,75) node  [align=left] {$\displaystyle C$};
+% Text Node
+\draw (363,233) node  [align=left] {$\displaystyle Y$};
+
+
+\end{tikzpicture}
+\end{center}
+\caption{Уравнение потребления}
+\end{figure}
+
+Рассмотрев построенный график, делаем следующие выводы:
+\begin{enumerate}
+\item Точки реальных данных не расположены на восходящей прямой, и это значит, что модель Кейнса в полной мере не соответствует реальным данным (не соответствует изучаемому объекту). Причина несоответствия -- воздействие на совокупное потребление в стране неучтенных факторов.$\displaystyle \boxed{\text{ДЗ}}$ Сформулировать факторы, которые оказывают воздействие на совокуное потребление в стране и отсутсвует в модели Кейнса. 
+\item Точки реальных данных расположены вдоль ощущаемой восходящей прямой. Это значит, что модель Кейнса правильно отражает тенденцию, согласно которой изменяется совокупное потребление в стране в ответ на визменение дохода. Модель Кейнса не улавливает всех изменений совокупного потребления в стране, вызванныех неуточнёнными факторами, но правильно отражен главный фактор потребления - доход.
+\item Точки реальных данных хаотично разбросаны вдоль восходящей прямой.
+\end{enumerate}
+
+	На основании п.1-3 можем предположить аналитическое описание диаграммы:
+\begin{equation}
+C\ =\ a_{0} \ +\ a_{1} \ \cdot Y\ +\ u( uncertain)
+\end{equation}
+,где $\displaystyle u$ - переменная велечина, которая принимает то положительное, то отрицательное значение рассеяное вокруг нуля. В силу хаотичности появления её значений экономисты называют \underline{случайным возмущением}. Физики и в технических приложениях такие величины называются невязками или ошибками модели.
+
+	Основные характеристики случайного возмущения:
+\begin{enumerate}
+\item $\displaystyle E( u) =0$ - среднее значение $\displaystyle u$, равное 0;
+\item $\displaystyle E\left( u^{2}\right) \ =\sigma ^{2}_{u}$, где $\displaystyle \sigma _{u}$ - мера влияния неучтённых факторов; $\displaystyle \sigma ^{2}_{u}$ средний квадрат разброса значений случайных возмущений вокруг мат. ожидания;
+\end{enumerate}
+
+	Отсюда следует спецификация эконометрической модели Кейнса в которой отражено влияние на $\displaystyle C$ неуточенных факторов:
+\begin{equation}
+\begin{cases}
+Y\ =\ C+I;\\
+C\ =\ a_{0} \ +\ a_{1} \ \cdot Y\ +\ u;\\
+0\ < \ a_{1} \ < \ 1\\
+E( u) \ =\ 0,\ E\left( u^{2}\right) \ =\ \sigma ^{2}_{u}
+\end{cases}
+\end{equation}
+
+Эконометричеными или регрессионными моделями называются дескриптивные ЭММ со случайными возмущениями в поведенческих уравнениях.
+
+	Приведём спецификацию эконометрической модели интерна
+\begin{equation}
+\begin{cases}
+DPS^{e}_{t} \ =\gamma \ \cdot EPS_{t} ;\\
+0\ \leq \gamma \ \leq 1;\ 0\ \leq \lambda \ \leq 1;\\
+DPS_{t} \ =\ \lambda \ \cdot \ DPS^{e}_{t} \ +\ ( 1-\lambda ) \ \cdot DPS_{t-1} \ +\ v_{t} ;\\
+E( v_{t}) \ =\ 0,\ E\left( v^{2}_{t}\right) \ =\sigma ^{2}_{v} .\ 
+\end{cases}
+\end{equation}
+Общий вид эконометрической модели в структурной форме:
+\begin{equation}
+F\left(\overrightarrow{y_{t}} ,\overrightarrow{x_{t}}\right) =\overrightarrow{u_{t}}
+\end{equation}
+Структурная форма эконометрической модели из линейной алгебры уравнений:
+\begin{equation}
+A\ \cdotp \ \overrightarrow{y_{t}} \ +\ B\cdotp \overrightarrow{x_{t}} \ =\ \overrightarrow{u_{t}}
+\end{equation}
+$\displaystyle \overrightarrow{u_{t}}$ - вектор случайных возмущений, некоторые компоненты могут равняться 0.
+
+	В ситуации Линтерна $\displaystyle \overrightarrow{u_{t}}$ состоит из двух компонент: $\displaystyle \overrightarrow{u_{t}} \ =\ ( 0,\ v_{t})$.
+
+	\textbf{Задача:} Найти $\displaystyle \overrightarrow{y_{t}}$ в моделе Кейнса. $\displaystyle \overrightarrow{x_{t}}$, $\displaystyle \overrightarrow{u_{t}}$? 
+
+	Для отражения в деструктивной модели влияния на объясняемые переменные неучтённых факторов в правых частях поведенческих уранений включаются случайные возмущения; случайные возмущения - та часть эндогенной переменной, которая порождена неуточнёнными факторами.
+
+	Приведенная форма эконометрической модели:
+\begin{equation}
+\vec{y}_{t} \ =f\left(\vec{x}_{t} ,\overrightarrow{u_{t}}\right)
+\end{equation}
+
+	Приведённая форма линейной эконометрической модели:
+\begin{equation}
+\overrightarrow{y_{t} \ } \ =M\ \cdotp \ \overrightarrow{x_{t}} \ +\ \overrightarrow{\varepsilon _{t}}
+\end{equation}
+\begin{equation}
+E\left( \vartriangle \overrightarrow{y_{t}}\right) \ =\ M\ \cdotp \vartriangle \overrightarrow{x_{t}}
+\end{equation}
+
+\textbf{Задача: }Трансфорсировать (3) к приведённой форме.
 \end{document}
