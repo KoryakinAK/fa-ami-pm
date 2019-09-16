@@ -2,3 +2,9 @@
 *.log
 *.aux
 *.synctex.gz
+*.DS_Store
+*.xdv
+*.fls
+*.fdb_latexmk
+*.blg
+*.bbl
