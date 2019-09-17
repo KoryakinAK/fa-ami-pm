@@ -4,6 +4,7 @@
 *.synctex.gz
 *.DS_Store
 *.xdv
+*.out
 *.fls
 *.fdb_latexmk
 *.blg
