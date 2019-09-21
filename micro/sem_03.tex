@@ -1,0 +1,284 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[14pt]{extsizes} 
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{cmap}
+% for fonts
+    \usepackage[T2A, T1]{fontenc}
+    \usepackage[english, russian]{babel}
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX,Renderer=Basic}
+    \setmainfont[Ligatures={TeX, Historic}]{Times New Roman}
+    \setsansfont{Times New Roman}
+    \setmonofont{Courier New}
+%plot
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+%plot
+\usepackage{float}% for \begin{figure}[H]
+\usepackage{cases}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{GH-TIMe}
+\begin{document}
+\begin{center}
+\section*{Семинар №3: Функция полезности потребителя и её основные свойства}
+\textbf{План}
+\end{center}
+
+\begin{enumerate}
+\item Наборы благ потребителя и пространство благ (множество благ). Функция полезности и два её свойства;
+\item Множество (кривые) безразличия и предельная норма замещения благ;
+\item Обсуждение домашних заданий;
+\end{enumerate}
+
+	Рассмотрим некоторого потребителя (семья или физическое лицо), который интересуется на рынке некоторыми благами, которые мы занумеруем натуральными числами $\displaystyle N\ =\ 1,\ 2,\ \cdots ,\ n$. Пусть: 1 - "хлеб", 2 - "молоко", ... , $\displaystyle n$ - развлечения. Символом $\displaystyle x_{1}$ обозначим количество первого блага, которого может приобрести потребитель, аналогично остальные.
+\begin{equation*}
+( x_{1} ,\ x_{2} ,\ \cdots ,\ x_{n})
+\end{equation*}
+	Формула (1) - набор благ, которые может приобрести потребитель. $\displaystyle \vec{x} \ \in \ C\ \sqsubset R^{+}_{n}$ - положительные ортант $\displaystyle n$-мерного евклидова пространства. При $\displaystyle n=2$ график будет выглядить следующим образом:
+
+\begin{figure}
+
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,145.03750610351562); %set diagram left start at 0, and has height of 145.03750610351562
+
+%Shape: Axis 2D [id:dp2935518445893601] 
+\draw  (67,124.55) -- (243.3,124.55)(84.63,14) -- (84.63,136.84) (236.3,119.55) -- (243.3,124.55) -- (236.3,129.55) (79.63,21) -- (84.63,14) -- (89.63,21)  ;
+
+% Text Node
+\draw (102,19) node  [align=left] {$\displaystyle x_{2}$};
+% Text Node
+\draw (238,107.44) node  [align=left] {$\displaystyle x_{1}$};
+% Text Node
+\draw (150,69) node  [align=left] {$\displaystyle R^{+}$};
+
+
+\end{tikzpicture}
+\end{center}
+\caption{$R^+$}
+\end{figure}
+
+Какие блага мы будем обозначать $\displaystyle \overrightarrow{x'} \ =\ ( x_{1} ',\ x_{2} ',\ \cdots ,\ x_{n} ',) \ $, $\displaystyle \overrightarrow{x'} '\ =\ ( x_{1} '',\ x_{2} '',\ \cdots ,\ x_{n} '',) \ $
+
+
+
+	Доказано, что для любого потребителя можно построить числовую функцию, определённую на множнстве $\displaystyle C$: $\displaystyle u\ =\ u\ ( x_{1} ,\ \cdots ,\ x_{n})$ значения которой равны уровням полезности для потребителя любого набора благ из множества $\displaystyle C$. Экономисты называют такую функуцию \textit{функцией полезности потребителя. }
+
+	Отметим два свойства этой функции и обсудим две модели формулы полезности удовлетворяющие этим свойствам:
+
+$\displaystyle \overrightarrow{x\ } '\ =\ ( 1,\ 3) ,\ \overrightarrow{x''} \ =\ ( 2,\ 3)$, набор $\displaystyle \overrightarrow{x''}$ полезнее потребителю и это значит, что функция полезности будет: $\displaystyle u( 2,\ 3) \  >\ u( 1,3) .$
+\begin{enumerate}
+\item Функция полезности является возрастающей функцией по каждому аргументу, дополнительное количество любого блага увеличивает значение функции полезности
+\end{enumerate}
+\begin{equation}
+u\ \uparrow x_{i}
+\end{equation}
+ 	2. Предельная полезность блага убывает по мере увеличения количесва этого блага при фиксированных значения остальных благ в наборе.
+\begin{center}
+\textbf{Понятие предельных велечин в экономике.}
+\end{center}
+	Вспомним понятие предельного значения эндогенной переменной по экзогенной. Предельной полезностью $\displaystyle i$ - ого блага 
+\begin{equation}
+M_{u}( x_{i}) \ =\ \vartriangle u=\ u( x_{1} ,\ \cdots ,\ x_{j} \ +1\ ,\ \cdots ,\ x_{n}) \ -\ u( x_{1} ,\ \cdots ,\ x_{j} ,\ \cdots ,\ x_{n}) \ \approx \ \frac{\partial u}{\partial x_{i}}
+\end{equation}
+экономисты называют приращение функции полезности (дополнительную полезность) в ответ на дополнительную единицу $\displaystyle i$ -ого блага. Согласно занятию 2 значение $\displaystyle M_{u}( x_{i}) \ \ \approx \ \frac{\partial u}{\partial x_{i}}$.
+
+	\textit{\textbf{Замечание. }Свойство (2) возрастание функции по каждому аргументу в аналитической записи означает положительное значение каждой производной: }
+\begin{equation}
+\frac{\partial u}{\partial x_{i}} \ =\ M_{u}( x_{i})  >0
+\end{equation}
+
+\begin{equation}
+\frac{\partial M_{u}( x_{i})}{\partial x_{i}} \ =\ \frac{\partial ^{2} \ u}{\partial \ x^{2}_{i}} \ < \ 0
+\end{equation}
+\textbf{Задача №1.} Доказать 
+
+
+\begin{equation}
+u( x_{1} ,\ x_{2}) \ =\ a_{1} \ \ln x_{1} \ +\ a_{2} \ \ln x_{2} ,\ a_{1}  >0,\ a_{2}  >0
+\end{equation}
+Такое уравнение называют \textit{уравнение Бернулли.}
+
+Доказать, что уравнение (5) обладает двумя свойствами полезности проверить неравенство (3) и (4):
+\begin{enumerate}
+\item 
+\end{enumerate}
+\begin{gather}
+\frac{\partial u}{\partial x_{1}} \ =\ \frac{a_{1}}{x_{1}} \  >0\\
+\frac{\partial u}{\partial x_{2}} \ =\ \frac{a_{2}}{x_{2}} \  >\ 0
+\end{gather}
+	2.
+
+
+\begin{equation}
+\frac{\partial ^{2} u}{\partial x^{2}_{i}} \ =\ -\frac{a_{1}}{x^{2}_{1}} \ < 0
+\end{equation}
+ Дейтсвительно функция (5) обладает двумя свойствами полезности.
+
+$\displaystyle \boxed{\text{ДЗ}}$\textbf{Задача №2. }
+
+Пусть в моделе (5), коэффициент $\displaystyle a_{1} \ =\ 0,1\ +\ 0,02\ i,\ a_{2} \ =\ 0.2\ +\ 0.02i,\ x_{1} \ =\ 2,\ x_{2} \ =\ 0.5$вычислить полезность набора и предельную полезность первого блага. 
+
+\textbf{Задача №3.}
+
+Проверь, что \ 
+
+
+\begin{equation}
+u( x_{1} ,\ x_{2}) \ =\ a_{0} \ \cdot x^{a_{1}}_{1} \ \cdot \ x^{a_{2}}_{2}
+\end{equation}
+
+
+ может служть показателем функции полезности. Экономисты называют функцию (6) \textit{неоклассической}. Свойтво (4) экономисты называют законом Госсена.
+\begin{center}
+\textbf{Кривые безразличия и прельная норма замещения благ}
+
+\end{center}
+	Вернёмся к примеру и предположим, что второй аргумент имеет вместо 3 значение 2:
+\begin{equation}
+\overrightarrow{x\ } '\ =\ ( 1,\ 3) ,\ \overrightarrow{x''} \ =\ ( 2,\ 2)
+\end{equation}
+	Говорят, что два набора благ \textit{безразличны} потребителю, если они для него одинаково полезны, т.е. 
+
+
+\begin{equation}
+u\left(\overrightarrow{x'}\right) \ =\ u\left(\overrightarrow{x'} '\right) \ \Leftrightarrow \overrightarrow{x'} \ \sim \overrightarrow{x''} \ 
+\end{equation}
+Обозначим символом: 
+
+
+\begin{equation}
+\ I\left(\vec{x}\right) '=\ \{\ \vec{x} \ |\ \vec{x} \ \in C,\ u\left(\vec{x}\right) \ =\ u\left(\overrightarrow{x'}\right) \ =u_{0}
+\end{equation}
+
+
+	\textit{Множеством безразличия} для набора $\displaystyle \overrightarrow{x'}$ принято называть наборы благ значение функции полезности у которых совпадают со значением функции полезности для набора $\displaystyle \overrightarrow{x'}$.
+
+Рассматривая определение функции безразличия мы можем записать уравнение, которому удовлетворяет любой элемент из множества $\displaystyle i$.
+
+
+\begin{equation}
+u( x_{1} ,\ x_{2}) \ =u_{0} \ =\ u\left(\overrightarrow{x'}\right)
+\end{equation}
+Рассматривая (10), что множество безразичия это ничто иное, как поверхность (линия) заданного уровня полезности (линия уровня). Если разрешить уравнение (10) относитель $\displaystyle x_{2}$, то сможем построить график линии уровня или гафик кривой безразличия. 
+\begin{equation}
+x_{2} \ =\ x_{2}( x_{1} \ ;u_{0})
+\end{equation}
+\textbf{Задача №4.} 
+
+Построить график кривой безразличия для логорифма Бернулли (5) по второй переменной.
+
+$\displaystyle \boxed{\text{ДЗ}}$ Дома построить принимая аргументы $\displaystyle a_{1} \ =\ 0,1\ +\ 0,02\ i,\ a_{2} \ =\ 0.2\ +\ 0.02i$, описанные выше.
+
+1) $\displaystyle a_{1} \ \ln x_{1} \ +\ a_{2} \ \ln x_{2} \ =\ u_{0} \ ( 10)$
+
+2) $\displaystyle \ln\left( x^{a_{1}}_{1} \ \cdot \ x^{a_{2}}_{2}\right) \ =\ u_{0}$
+
+3) Теперь воспользуемся определением логорифма $\displaystyle x^{a_{1}}_{1} \ \cdot \ x^{a_{2}}_{2} \ =\ e^{u_{0}}$
+
+4) 
+\begin{equation}
+x_{2} \ =\ e^{\frac{u_{0}}{a_{2}}} \ \cdot \ x^{-\frac{a_{1}}{a_{2}}}_{1} \ =\ K_{0} \ \cdot \ x^{-\frac{a_{1}}{a_{2}}}_{1}
+\end{equation}
+
+
+\begin{figure}
+
+
+
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,216.36248779296875); %set diagram left start at 0, and has height of 216.36248779296875
+
+%Shape: Axis 2D [id:dp6622510262403458] 
+\draw  (34,164.83) -- (303.3,164.83)(60.93,25) -- (60.93,180.36) (296.3,159.83) -- (303.3,164.83) -- (296.3,169.83) (55.93,32) -- (60.93,25) -- (65.93,32)  ;
+%Curve Lines [id:da5425113300925142] 
+\draw    (66.3,31.76) .. controls (68.3,52.76) and (59.3,151.76) .. (283.3,155.76) ;
+
+
+%Straight Lines [id:da07597498938546532] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (171,142.47) -- (171,164.29) ;
+
+
+%Straight Lines [id:da17120347038582606] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (61,142.93) -- (171,142.47) ;
+
+
+%Straight Lines [id:da4368158411111085] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (79.9,84.55) -- (79.9,164.55) ;
+
+
+%Straight Lines [id:da9698073657246726] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (61,84.37) -- (79.9,84.55) ;
+
+
+
+% Text Node
+\draw (295,183.44) node  [align=left] {$\displaystyle x_{1}$};
+% Text Node
+\draw (45,25.44) node  [align=left] {$\displaystyle x_{2}$};
+% Text Node
+\draw (179,185) node  [align=left] {$\displaystyle x_{1} '$};
+% Text Node
+\draw (44,127) node  [align=left] {$\displaystyle x_{2} '$};
+% Text Node
+\draw (175,123) node  [align=left] {$\displaystyle \overrightarrow{x'}$};
+% Text Node
+\draw (259,120) node  [align=left] {$\displaystyle I\left(\vec{x} '\right)$};
+% Text Node
+\draw (103,190) node  [align=left] {$\displaystyle x_{1} ''$};
+% Text Node
+\draw (45,81) node  [align=left] {$\displaystyle x_{2} ''$};
+
+
+\end{tikzpicture}
+\end{center}
+\caption{Множество безразличия}
+\end{figure}
+\begin{center}
+
+\textbf{Предельная норма замещения первого блага вторым}
+\end{center}
+	Рассмотрим Рис. 2 и выберем точку на линии слева от $\displaystyle \overrightarrow{x'_{1}}$. Наш выбор мы можем интерпретировать так в наборе $\displaystyle \overrightarrow{x'}$ количество первого блага сократилось на $\displaystyle \vartriangle x_{1} ':\ x_{1} \ =\ x_{1} '\ -\ \vartriangle x_{1} '$ . 
+
+	$\displaystyle \boxed{\text{ДЗ}}$ В безразличном наборе $\displaystyle \vec{x}$ больше на $\displaystyle \vartriangle x_{2}$ можно показать, что связаны так:
+
+
+\begin{equation}
+\vartriangle x_{2} '\ =\ \frac{\partial u}{\partial x_{1}} :\frac{\partial u}{\partial x_{2}} \ \vartriangle x_{1} '\ =\ MRS_{1,\ 2} \ \vartriangle x_{1} '
+\end{equation}
+Предельная норма замещение $\displaystyle MRS_{1,\ 2}$ первого блага вторым. Это величина имеет смысл дополнительного количества второго блага, которое заменит потерю еденицы первого блага.
+
+\textbf{Задача №5}
+
+Рассчитать предельную норму замещения первого блага вторым.
+
+Решение:
+
+$\displaystyle \ \frac{\partial u}{\partial x_{1}} \ =\frac{a_{1}}{x_{1}} ;\ \frac{\partial u}{\partial x_{2}} \ =\frac{a_{2}}{x_{2}} \ \Rightarrow MRS\ _{1,\ 2} \ =\ \frac{a_{1} \ x_{2}}{a_{2} \ x_{1}} \ =\ \frac{0.1}{0.2} \ \frac{0.5}{1} \ =\ 0.25$.
+
+$\displaystyle \boxed{\text{ДЗ}}$ Вычислить предельную норму замещения с данными из задачи с коэффициентами второго блага первым для неоклассической функции полезности (6). 
+
+\textbf{Итог}. Кривые безразличия - это равноценные для потребителя наборы благ, предельные нормы замещения имеют смысл дополнительного количества одного блага, которое компенсирует потерю еденицы другого.
+
+\end{document}
