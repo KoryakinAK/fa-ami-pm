@@ -1,5 +1,5 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage[14pt]{extsizes} 
+\usepackage[14pt]{extsizes}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -34,8 +34,12 @@
 \pgfplotsset{compat=1.15}
 \usepackage{graphicx}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{GH-TIMe}
+\author{Аверьянов Тимофей, Корякин Алексей}
 \begin{document}
+\begin{center}
+\section*{Семинар №3 \\
+Отражение спецификации эконометрической модели влияния на текущие эндогенные переменные неучтенных в модели факторов}
+\end{center}
 \begin{enumerate}
 \item Аналитическое описание диаграммы рассеянья (Лаговый доход -- текущее потребление домохозяйств). Четвёртый принцип спецификации эконометрических моделей;
 \item Обсуждение домашних заданий;
@@ -64,7 +68,7 @@
 C_{t} \ =\ a_{0} \ +\ a_{1} \ \cdot Y_{t - 1} ; & a_{1} \  >\ 0\\
 I_{t} \ =\ b \ ( Y_{t-1} \ -\ Y_{t-2}) ; & b \  >0\\
 G_{t} \ =\ g \ G_{t-1} ; & g >1\\
-Y_{t} \ =\ C_{t} \ +\ I_{t} \ +\ G_{t} ; & 
+Y_{t} \ =\ C_{t} \ +\ I_{t} \ +\ G_{t} ; &
 \end{cases}
 \end{equation*}
 
@@ -79,38 +83,38 @@ Y_{t} \ =\ C_{t} \ +\ I_{t} \ +\ G_{t} ; &
 \item В Excel построим график, откладывая вдоль горизонтальной оси лаговые уровни ВВП, в доль вертикальной оси соответсвующиe уровни домохозяйств $\displaystyle C_{t}$. Если модель Самуэльсона-Хикса в полной мере соответсвует реальным данным, то построенный график (построенное множество точек) будет предствалять собой восходящую прямую. Если же график окажется иным, то будет означать, что по крайней мере первое уравнение не соответсвует реально статистике.
 \begin{figure}[H]
 \begin{center}
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
 
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 %uncomment if require: \path (0,312.8249969482422); %set diagram left start at 0, and has height of 312.8249969482422
 
-%Shape: Axis 2D [id:dp8743509274123296] 
+%Shape: Axis 2D [id:dp8743509274123296]
 \draw  (50,251.98) -- (384.3,251.98)(83.43,68) -- (83.43,272.43) (377.3,246.98) -- (384.3,251.98) -- (377.3,256.98) (78.43,75) -- (83.43,68) -- (88.43,75)  ;
-%Straight Lines [id:da44467330718849607] 
+%Straight Lines [id:da44467330718849607]
 \draw    (81.3,206.43) -- (347.3,123.43) ;
 
-%Straight Lines [id:da6441726223509632] 
+%Straight Lines [id:da6441726223509632]
 \draw    (140.3,187.43) -- (140,230) ;
 \draw [shift={(140,230)}, rotate = 90.4] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
 
-%Straight Lines [id:da45408138515545904] 
+%Straight Lines [id:da45408138515545904]
 \draw    (179.3,134.43) -- (179,176) ;
 
 \draw [shift={(179.3,134.43)}, rotate = 90.41] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
 
-%Straight Lines [id:da3675690211779734] 
+%Straight Lines [id:da3675690211779734]
 \draw    (229.3,159.43) -- (229,201) ;
 \draw [shift={(229,201)}, rotate = 90.41] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
 
-%Straight Lines [id:da8370177312160028] 
+%Straight Lines [id:da8370177312160028]
 \draw    (259.3,131.43) -- (259.3,151.43) ;
 
 \draw [shift={(259.3,131.43)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
-%Straight Lines [id:da37313575108824626] 
+%Straight Lines [id:da37313575108824626]
 \draw    (290.3,99.43) -- (290,141) ;
 
 \draw [shift={(290.3,99.43)}, rotate = 90.41] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
-%Straight Lines [id:da6953659916864847] 
+%Straight Lines [id:da6953659916864847]
 \draw    (330.3,128.43) -- (330.3,152.43) ;
 \draw [shift={(330.3,152.43)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
 
@@ -140,7 +144,7 @@ Y_{t} \ =\ C_{t} \ +\ I_{t} \ +\ G_{t} ; &
 \item Рассматривая данный график мы констатируем, что точки не распределились на воходящей прямой и это значит, что модель Самуэльсона-Хикса не в полной мере соответсвует изчуемому объекту; Основная причина неполного соответствие влияние на уровень потребления домохозяйств неучтённых факторов.
 \end{enumerate}
 
-	$\displaystyle \boxed{\text{ДЗ}}$ осуществить аналогичное исследование модели Самуэльсона-Хикса для уравнения инвестиций и государственных расходов. 
+	$\displaystyle \boxed{\text{ДЗ}}$ осуществить аналогичное исследование модели Самуэльсона-Хикса для уравнения инвестиций и государственных расходов.
 
 	Аналитическое описание диаграммы рассеивания. Построенный график принято называть диаграммой рассеивания. Нам предстоит аналитически описать эту диаграмму. Рассматривая эту диаграмму мы можем сделать следующие выводы:
 \begin{enumerate}
@@ -149,7 +153,7 @@ Y_{t} \ =\ C_{t} \ +\ I_{t} \ +\ G_{t} ; &
 \end{enumerate}
 
 	Вот аналитическая запись данной диаграммы:
-	
+
 \begin{equation}
 \begin{cases}
 C_{t} \ =a_{0} \ +a_{1} Y_{t-1} \ +\ U_{t} ;\\
