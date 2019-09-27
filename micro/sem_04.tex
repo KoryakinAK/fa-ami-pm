@@ -1,7 +1,6 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[14pt]{extsizes}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{cmap}
@@ -14,8 +13,22 @@
     \setsansfont{Times New Roman}
     \setmonofont{Courier New}
 %plot
-\usepackage{pgf,tikz,pgfplots}
-\pgfplotsset{compat=1.15}
+%mathcha.io
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+%mathcha.io
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
 \pagestyle{empty}
@@ -27,49 +40,177 @@
 \author{Аверьянов Тимофей, Корякин Алексей}
 \begin{document}
 \begin{center}
-\section*{Семинар №4 \\
-Модель Маршала-Лаграса. Модель поведения потребителя на рынке благ}
-\end{center}
-\begin{center}
 \textbf{План}
 \end{center}
-\begin{enumerate}
-\item Структурная форма Маршала-Лаграса
-\item Функция спроса потребителя и её свойства. Функция косвенной полезности потребителя.
-\end{enumerate}
-\begin{center}
-\textbf{Подзаголовок}
-\end{center}
 
-На прошлом занятии обсудили понятие функции полезности и отметили её свойства. Это понятие мы привлечем в процессе обсуждения модели поведения потребителя. Экономическая суть это модели следующая: потребитель приобретает такой набор благ, который, с одной стороны, ему максимально полезнен, а с другой стороны – по карману
-\begin{equation}
-\vec(x)^*=(x_1, ..., x_n)
+\begin{enumerate}
+\item Структурная форма модели Маршалла-Вальраса;
+\item Функция косвенной полезности;
+\item Проверка $\displaystyle \boxed{\text{ДЗ}}$
+\end{enumerate}
+
+	На прошлом занятии мы обсудили понятие функции полезности. И отметили её свойства. Сейчас это понятие мы привлечём в процессе обсуждения модели поведения потребителя. Суть этой модели следующая:
+
+	Потребитель приобретает такой набор благ: $\displaystyle \vec{x}^{*} \ =\ \left( x^{*}_{1} ,\ \dotsc ,\ x^{*}_{n}\right)$, который с одной стороны ему максиммально полез, а с другой стороны по карману (модель Маршалла-Вальраса):
+
+
+\begin{equation*}
 \begin{cases}
-u=u(x_1, ..., x_n) -> max; \\
-\sum_{i=1}^n p_i x_i; \\
-x_1 > 0, ...., x_n > 0;
+u\ =\ u( x_{1} ,\ \dotsc ,\ x_{n}) \ \rightarrow \max\\
+{\displaystyle \sum ^{n}_{i=1} p_{i} x_{i} \ \leq \ M}\\
+x_{1} \ \geq \ 0,\ \dotsc ,\ x_{n} \ \geq 0
 \end{cases}
-\end{equation}
+\eqno(1)
+\end{equation*}
+Экзогенными переменными в этой модели Маршалла-Вальраса являются:
+\begin{equation*}
+\left( M\ -\text{бюджет} ,p_{1} ,\ \dotsc ,\ p_{n} \ \left( -\ \text{цена}\right)\right) \eqno(2)
+\end{equation*}
+Эндлогенными переменными в этой модели Маршалла-Вальраса являются наборы благ:
 
-Экзогенными перменными являются бюджет потребителя и цены благ.
-Эндогенными – количество благ.
-Функция полезности задается экзогенно.
-Модель 1 с позиции математики является примером задачи математического программирования на условный экстремум; с позиции метода математического моделирования – это оптимизационная модель в структурной форме (см. лекцию и семинар №1).
 
-К приведенной форме модель 1 трансформируется методом Лагранжа.
+\begin{equation*}
+\vec{x} \ =( x_{1} ,\ \dotsc ,\ x_{n})
+\end{equation*}
+ Модель (1) служит примером задачи математического программирования на условный экстремум (Смотри lec\_01).
+
+	К приведённой форме модель (1) трансформируется методом Лагранжа:
 \begin{enumerate}
-  \item Составляется функция Лагранжа. $L=u(x_1, ..., x_n)+l(M-\sum_{i}^n p_i x_i)$
-  \item Cоставляется условие экстремума $\frac{\partial L}{\partial x_i}=0 $. \\
-  Условия представляют собой систему $n+1$ уравнения с $n+1$ неизвестными.
-  \item Система 3 решается либо аналитчески, либо численно.
+\item Составляется функция Лагранжа: $\displaystyle L=\ u( x_{1} ,\ \dotsc ,\ x_{n}) \ +\ l\left( M\ -\ {\displaystyle \sum_{i} p_{i} \ x_{i}}\right)$
+\item Cоставляется необходимое условие экстремума:
 \end{enumerate}
-Итогом решения является искомый набор $\vec(x)=\vec(x)^{M-B}(M, p_1, ..., p_n)$
-\textbf{Пример.} Текст
-\begin{itemize}
-\item Пункт
-\item Пункт
-\end{itemize}
+\begin{equation*}
+\begin{cases}
+\displaystyle{\frac{\partial L}{\partial x_{i}}} \ =0;\\[10pt]
+\displaystyle{\frac{\partial L}{\partial l}} \ =\ 0;\\[10pt]
+i\ =\ ( 1,\ \dotsc ,\ n)
+\end{cases}
+\eqno(3)
+\end{equation*}
+	3. Эти условия представляют систему $\displaystyle n+1$ уравнений с $\displaystyle n+1$ переменной.
 
-\framebox[1.1\width]{Д/з}. Задание
+	Система (3) решается либо аналитически, либо численно. Итогом решения является: $\displaystyle \vec{x}^{*} =\vec{x}^{M-B} \ ( M,p_{1} ,\ \dotsc ,\ p_{n})$ и множитель Лагранжа $\displaystyle l\ =\ l\ ( M,p_{1} ,\ \dotsc ,\ p_{n})$.
 
+\textbf{Задача.}
+
+Пусть функцией полезности потребителя служит логарифм Бернулли в ситуации двух благ эта функция имеет уравнение:
+
+
+\begin{equation*}
+u\ =a_{1} \ ( =\ 0.1) \ \cdotp \ \ln x_{1} \ +\ a_{2}( =\ 0.2) \ \cdotp \ \ln \ x_{2} \
+\end{equation*}
+Дано:
+
+$\displaystyle \vec{x} \ =\ \left( x_{1} \ \left( =\text{молоко}\right) ,\ x_{\ 2} \ \left( =\text{хлеб}\right)\right)$
+
+$\displaystyle M\ =\ 200$
+
+$\displaystyle p_{1} \ =\ 50\ \text{p/кг}$
+
+$\displaystyle p_{2} \ =\ 75\ \text{p/л}$
+
+Найти:
+
+Набор благ который приобретёт потребитель.
+
+
+\begin{gather*}
+u\ =a_{1} \ \cdotp \ \ln x_{1} \ +\ a_{2} \ \cdotp \ \ln \ x_{2} \ +l( M\ -\ ( 50x_{1} \ +\ 75x_{2})) =\\
+= a_{1} \ \cdotp \ \ln x_{1} \ +\ a_{2} \ \cdotp \ \ln \ x_{2} \ +\ Ml\ -50x_{1} l-75x_{2} l
+\end{gather*}
+
+\begin{equation*}
+\begin{cases}
+\frac{\partial L}{\partial x_{1}} \ =\frac{a_{1}}{x_{1}} \ -\ 50l\ =\ 0;\\
+\frac{\partial L}{\partial x_{2}} \ =\ \frac{a_{2}}{x_{2}} \ -\ 75l\ =\ 0;\\
+\frac{\partial L}{\partial l} \ =\ M\ -\ 50x_{1} \ -\ 75x_{2} \ =\ 0;
+\end{cases}
+\end{equation*}
+
+\begin{equation*}
+M\ -\ \frac{50a_{1}}{50l} \ -\ \frac{75a_{2}}{75l} \ =\ 0
+\end{equation*}
+
+\begin{equation*}
+M\ =\ \frac{a_{1}}{l} \ +\ \frac{a_{2}}{l}
+\end{equation*}
+
+\begin{equation*}
+Ml\ =\ a_{1} \ +\ a_{2}
+\end{equation*}
+
+
+	Таким образом по правилам (5) рассчитывается спрос потребителя по Маршалу-Вальрасу. Доведём до чисел:
+
+
+\begin{equation*}
+l\ =\ \frac{a_{1} \ +\ a_{2}}{M} \ =\ \frac{0.3}{200} \ =\ 0.0015 \eqno(4)
+\end{equation*}
+
+
+
+\begin{equation*}
+x^{*}_{1} \ =\ \frac{a_{1} \ M}{( a_{1} +a_{2}) p_{1}} \ =\ \frac{0.1\ \times \ 200}{0.3\ \times 50} \ =\ 1.3 \eqno(5)
+\end{equation*}
+
+\begin{equation*}
+x^{*}_{2} \ =\ \frac{a_{2} \ M}{( a_{1} +a_{2}) p_{2}} \ =\ \frac{0.2\ \times \ 200}{0.3\ \times 75} \ =\ 1.77 \eqno(5')
+\end{equation*}
+Рассчитаем значение функции полезности:
+
+
+\begin{equation*}
+u\ =\ a_{1} \ \ln x_{1} \ +\ a_{2} \ \ln x_{2} \ =\ 0.1\ \ln \ 1.3\ \ +\ 0.2\ \ln 1.77\ =\ 0.14
+\end{equation*}
+\textit{Замечание.} Подстановка вектора $\displaystyle \overrightarrow{x^{*}}$ превращает эту функцию:
+\begin{equation*}
+u\ =\ u\left( x^{*}_{1} ,\ \cdots ,\ x^{*}_{n}\right) \ =\ u( M,\ p_{1} ,\ \cdots ,\ p_{n}) \ \eqno(6)
+\end{equation*}
+в функцию экзогенных переменных. Экономисты называют эту функцию \textit{функцией косвенной полезности} потребителя, в нашем примере значение этой косвенной функции полезности оказалось равной значению 0.14.
+
+$\displaystyle \boxed{\text{ДЗ}}$ рассчитать спрос потребителя по модели Маршала-Вальраса принимая в качестве функции полезности неоклассическую функцию:
+\begin{equation*}
+u\ =\ a_{0} \ ( a_{0} \ =1) \ \cdot \ x^{a_{1}}_{1} \ \cdot \ x^{a_{2}}_{2} \eqno(6')
+\end{equation*}
+Параметры этой функции и значения переменных принять такими же как в аудиторных задачах.
+\begin{center}
+\textbf{Свойства спроса потребителя по модели \ Маршала-Вальраса}
+\end{center}
+Показать что спрос потребителя остаётся неизменным, если его бюджет и цены благ изменяются одновременно в некоторое кол-во $\displaystyle k$.
+
+Доказательство привести с помощью формулы (5):
+\begin{equation*}
+x^{*}_{1} \ =\frac{a_{1} \ Mk}{( a_{1} +a_{2}) p_{1} k} \eqno(7)
+\end{equation*}
+
+\begin{equation*}
+x^{*}_{2} \ =\ \frac{a_{2} \ Mk}{( a_{1} +a_{2}) p_{2} k} \eqno(7')
+\end{equation*}
+Следовательно спрос не изменится. Свойство (7) остаётся справедливым для любой функции полезности. Математики называют такое свойство \textit{свойством однородности нулевой степени по Маршалу-Вальрасу}.
+
+$\displaystyle \boxed{\text{ДЗ}}$ Показать, что и для неоклассической функции свойство однородности сохраняется.
+
+
+\begin{equation*}
+u\ =\ a_{0} \ ( a_{0} \ =1) \ \cdot \ x^{a_{1}}_{1} \ \cdot \ x^{a_{2}}_{2}
+\end{equation*}
+\textbf{Задача}
+
+Вычислить экономический смысл множителя Лагранджа ($\displaystyle l$). (Заглянем в 1 и 2 занятие).
+
+\textbf{Решение:}
+
+Вернёмся к выражению
+\begin{equation*}
+u\ =a_{1} \ \cdotp \ \ln x_{1} \ +\ a_{2} \ \cdotp \ \ln \ x_{2}
+\end{equation*}
+ и с учётом выражения (5) получим выражение этой функции:
+
+
+\begin{equation*}
+u^{*} =a_{1} \ \cdot \ln\left(\frac{a_{1} \ M}{( a_{1} +a_{2}) p_{1}}\right) \ +a_{2} \ \cdot \ln\left(\frac{a_{2} \ M}{( a_{1} +a_{2}) p_{2}}\right) \eqno(8)
+\end{equation*}
+$\displaystyle \boxed{\text{ДЗ}}$ Можно показать, что предельное значение $\displaystyle y^{*}$ по бюджету потребителя в точности равно множителю Лагранджа.
+
+Дадим трактовку множителю $\displaystyle l$. $\displaystyle l\ -$ \ дополнительная полезность по Маршалу-Вальрасу, которая возникает в ответ на дополнительную еденичу денежных средств ($\displaystyle M$).
 \end{document}
