@@ -1,0 +1,75 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[14pt]{extsizes}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{cmap}
+% for fonts
+    \usepackage[T2A, T1]{fontenc}
+    \usepackage[english, russian]{babel}
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX,Renderer=Basic}
+    \setmainfont[Ligatures={TeX, Historic}]{Times New Roman}
+    \setsansfont{Times New Roman}
+    \setmonofont{Courier New}
+%plot
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+%plot
+\usepackage{float}% for \begin{figure}[H]
+\usepackage{cases}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Аверьянов Тимофей, Корякин Алексей}
+\begin{document}
+\begin{center}
+\section*{Семинар №4 \\
+Модель Маршала-Лаграса. Модель поведения потребителя на рынке благ}
+\end{center}
+\begin{center}
+\textbf{План}
+\end{center}
+\begin{enumerate}
+\item Структурная форма Маршала-Лаграса
+\item Функция спроса потребителя и её свойства. Функция косвенной полезности потребителя.
+\end{enumerate}
+\begin{center}
+\textbf{Подзаголовок}
+\end{center}
+
+На прошлом занятии обсудили понятие функции полезности и отметили её свойства. Это понятие мы привлечем в процессе обсуждения модели поведения потребителя. Экономическая суть это модели следующая: потребитель приобретает такой набор благ, который, с одной стороны, ему максимально полезнен, а с другой стороны – по карману
+\begin{equation}
+\vec(x)^*=(x_1, ..., x_n)
+\begin{cases}
+u=u(x_1, ..., x_n) -> max; \\
+\sum_{i=1}^n p_i x_i; \\
+x_1 > 0, ...., x_n > 0;
+\end{cases}
+\end{equation}
+
+Экзогенными перменными являются бюджет потребителя и цены благ.
+Эндогенными – количество благ.
+Функция полезности задается экзогенно.
+Модель 1 с позиции математики является примером задачи математического программирования на условный экстремум; с позиции метода математического моделирования – это оптимизационная модель в структурной форме (см. лекцию и семинар №1).
+
+К приведенной форме модель 1 трансформируется методом Лагранжа.
+\begin{enumerate}
+  \item Составляется функция Лагранжа. $L=u(x_1, ..., x_n)+l(M-\sum_{i}^n p_i x_i)$
+  \item Cоставляется условие экстремума $\frac{\partial L}{\partial x_i}=0 $. \\
+  Условия представляют собой систему $n+1$ уравнения с $n+1$ неизвестными.
+  \item Система 3 решается либо аналитчески, либо численно.
+\end{enumerate}
+Итогом решения является искомый набор $\vec(x)=\vec(x)^{M-B}(M, p_1, ..., p_n)$
+\textbf{Пример.} Текст
+\begin{itemize}
+\item Пункт
+\item Пункт
+\end{itemize}
+
+\framebox[1.1\width]{Д/з}. Задание
+
+\end{document}
