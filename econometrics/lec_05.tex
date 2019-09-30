@@ -1,0 +1,185 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[14pt]{extsizes}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{cmap}
+% for fonts
+    \usepackage[T2A, T1]{fontenc}
+    \usepackage[english, russian]{babel}
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX,Renderer=Basic}
+    \setmainfont[Ligatures={TeX, Historic}]{Times New Roman}
+    \setsansfont{Times New Roman}
+    \setmonofont{Courier New}
+% mathcha
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+% mathcha
+\usepackage{pgfplots} % plot
+\usepackage{float} % for H at figure
+\usepackage{cases}
+\pgfplotsset{compat=1.15}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Аверьянов Тимофей, Корякин Алексей}
+\begin{document}
+\begin{center}
+\textbf{Лекция №5. }
+
+\textbf{Линейная модель множественной регрессии (базовая модель эконометрики)}
+
+\textbf{План}
+\end{center}
+
+\begin{enumerate}
+\item Завершение обсуждения схемы построения эконометрических моделей;
+\item \textbf{Линейная модель множественной и парной регрессии (базовая модель эконометрики);}
+\item Уравнение наблюдения объекта (схема Гаусса-Маркова), компактная запись схемы Гаусса-Маркова и понятие статичсктической процедуры оценивания параметров модели.
+\end{enumerate}
+
+На прошлой лекции присупили к обсуждению схемы построения эконометрических моделей:
+\begin{enumerate}
+\item Спецификая модели;
+\item Сбор и проверка статистической информации;
+\item Оценивание (найстройка) модели;
+\item Проверка адектватности (верификации) модели
+\end{enumerate}
+
+	Мы разобрали \textbf{1 пункт. }Там же подчеркнули, что спецификация эконометрической модели непременно включает в себя неизвестные константы $\displaystyle a_{0} ,\ a_{1}$, которые называют параметрами модели. В самом общем виде спецификация модели записывается так: $\displaystyle F\left(\vec{x}_{t} ,\ \vec{y}_{t} ;\ \vec{p}\right) \ =\ \vec{u}_{t}$. Здесь мы начинаем выявлять константы.
+\begin{equation*}
+\begin{cases}
+Y\ =\ C\ +\ I\\
+С\ =\ a_{0} \ +a_{1} \ \cdot Y\ +\ u\\
+0\ < \ a_{1} \ < \ 1\\
+E( u) \ =\ 0,\ E\left( u^{2}\right) \ =\ \sigma ^{2}_{u}
+\end{cases}
+\end{equation*}
+Добавим, что спецификация временного ряда квартальных уровней ВВП России включает в себя 8 констант:
+\begin{equation*}
+( a_{0} ,\ a_{1} ,\ a_{2} ,\ a_{3} ,\ b_{1} ,\ b_{2} ,\ b_{3} ,\ \sigma _{u})
+\end{equation*}
+\textbf{	Второй этап} состоит в сборе и проверке статистической информации в виде конкретных реальных значений переменных входящих в модель. Примером второго этапа служат данные из таблицы № 1 из лекции № 1.
+
+\textit{Замечание}. Собранная статистическая информация разделяется на две части причём большая часть именуется обучаещей выборкой и предназначена для определения параметров модели; остальная информация именуется тестовой или контролирующей выборкой и используется для проверки адекватности модели.
+
+	\textbf{На третьем} этапе схемы методами математической статистики оцениваются параметры модели по обучающей выборке. 4 и 5 практическое занятие служит иллюстрация 3 этапа. Подчеркнём, что всегда удаётся вычислить только приближённые значения параметров $\displaystyle \widetilde{\vec{p}}$ (оценки). Причина приближённого значения оценок параметров состоит в наличии случайных возмущений, пораждённых неучтёнными факторами.
+
+	\textbf{Четвёртый этап} состоит из проверки адекватности оценённой модели \\ $\displaystyle F\left(\vec{x}_{t} ,\ \vec{y}_{t} ;\ \widetilde{\vec{p}}\right) \ =\ \vec{u}_{t}$ путём сопоставления прогнозов значений эндогенных перменных из контролирующей выборки $\displaystyle \tilde{y}_{t} \ =f\left(\vec{x}_{t} ,\ \widetilde{\vec{p}}\right) \ \ ( 3.1.11)$ с реальными значениями. Модели признаётся адекватной, если ошибки прогнозов не превышают критические уровни $\displaystyle |\tilde{y}_{t} -y_{t} |\ \left(\text{ошибка прогноза}\right) \leq e_{\text{крит}}\left(\tilde{y}_{t}\right) \ ( 3.1.12)$ (15\% или $\displaystyle 2-3\ \sigma $).
+
+	\textbf{Вывод:} схема построения эконометрических моделей состоит из 4 этапов и если модель признаётся не адекватной, то экономист возращается на первый этап и выявляет ошибки спецификации модели.
+\begin{center}
+\textbf{Линейная модель множественной регрессии (базовая модель эконометрики)}
+\end{center}
+\textbf{	}Модель со следующей спецификацией
+\begin{equation*}
+\begin{cases}
+y\ =\ a_{0} \ +\ a_{1} \ x_{1} \ +\ a_{2} \ x_{2} \ +\ \dotsc \ +\ a_{k} \ x_{k} \ +\ u\\
+E( u) \ =\ 0;\ \ E\left( u^{2}\right) \ =\ \sigma ^{2}_{u} ;
+\end{cases}
+\eqno(3.2.1)
+\end{equation*}
+является базовой моделью эконометрики и называется \textit{линеной моделью множественной регресии}. Символом $\displaystyle y$ обозначена единственная объясняемая переменная; cимволом $\displaystyle ( x_{1} ,\ x_{2} ,\dotsc ,\ x_{k})$(3.2.3) обозначены предопределённые (объясняющие переменные); символами $\displaystyle ( a_{0} ,\ a_{1} ,\dotsc ,\ a_{k})$(3.2.4) обозначены константы и носят название \textit{коэффициенты модели} (более полно, коэффициентов \textit{функции регрессии}).
+\begin{equation*}
+\tilde{y} \ =\ a_{0} \ +\ a_{1} \ x_{1} \ +\ a_{2} \ x_{2} \ +\ \dotsc \ +\ a_{k} \ x_{k}
+\end{equation*}
+	Символом $\displaystyle \tilde{y} \ $обозначена функция объясняющий перменных, имеющая смысл той части эндогенной переменной $\displaystyle y$, которая объясняется предопределёнными перменными модели; величина $\displaystyle \tilde{y} \ $ носит название \textit{функции регрессии} и с точки зрения теории вероятностей является условным математическим ожидание велечины $\displaystyle y$; $\displaystyle u$ обозначено случайное возмущение.
+\begin{center}
+\textbf{Смысл коэффициента }$\displaystyle a_{g}$\textbf{ при переменной }$\displaystyle x_{g}$\textbf{ }
+\end{center}
+$\displaystyle a_{j}$ имеет смысл ожидаемого предельного значения переменной $\displaystyle y$ по переменной $\displaystyle x_{j}$.
+\begin{equation*}
+E( \vartriangle y) \ =\ a_{j} \ \cdot \vartriangle x_{j}
+\eqno(3.2.4)
+\end{equation*}
+\underline{Пример (линейной модели множественной модели)}. Вернёмся к нашей предшествующей лекции и рассмотрим модель квартальных уровней ВВП России с кубическим трендом. Объясняемые переменные - это квартальные уровни датированные кварталами или $\displaystyle t$, связанный с календарём следующим правилом $\displaystyle t\ =\ 1,\ \text{для первого квартала 2011 года}$.
+
+
+\begin{equation*}
+\begin{cases}
+Y_{t} \ =\ a_{0} \ +_{\ } a_{1} \ \cdot t\ +\ b_{1} \ \cdot \ d_{1}( t) \ +\ b_{2} \ \cdot d_{2}( t) \ +\ \ b_{3} \ \cdot d_{3}( t) \ +u_{t}\\
+E( u) \ =\ 0;\ \ E\left( u^{2}\right) \ =\ \sigma ^{2}_{u} ;\\
+t\ =1,\ 2,\ 3,\dotsc \\
+t\ =\ 1\ \Rightarrow 1\ \text{квартал 2011 года}
+\end{cases}
+\eqno(3.2.5)
+\end{equation*}
+	Объясняющими переменными служит 6 переменных: ($\displaystyle t,\ t^{2} ,\ t^{3} ,\ d_{1}( t) ,\ d_{2}( t) ,\ d_{3}( t)$). \textit{Замечание.} Обратим внимание, что в линейной модели множесвтенной регрессии среди объяснящих переменных $\displaystyle d_{1}( t) ,\ d_{2}( t) ,\ d_{3}( t)$, только одная является независимой - переменная $\displaystyle t$. Это значит, что в ЛММР объясняющие переменные могут быть как независимыми друг от друга, так и являться известными функциями каких-то других переменных велечин. Запомним, что аргумент - независим, а экзогенная переменная может быть зависимой.
+\begin{center}
+\textbf{Линейная модель парной регрессии}
+\end{center}
+	Простейшим случаем ЛММР служит модель парной регрессии с одной объясняющей переменной.
+\begin{equation*}
+\begin{cases}
+y\ =\ a_{0} \ +\ a_{1} \ \cdot x\ +\ u\\
+E( u) \ =\ 0;\ \ E\left( u^{2}\right) \ =\ \sigma ^{2}_{u} ;
+\end{cases}
+\eqno(3.2.6)
+\end{equation*}
+Приведём важный для инвестиционного анализа пример инвестиционной модели. Является рыночная модель ценной бумаги.
+\begin{equation*}
+\begin{cases}
+r\ =\ \alpha \ +\ \beta \ \cdot r_{I} \ +\ u\\
+E( u) \ =\ 0;\ \ E\left( u^{2}\right) \ =\ \sigma ^{2}_{u} ;
+\end{cases}
+\eqno(3.2.7)
+\end{equation*}
+$\displaystyle \boxed{\text{ДЗ}}$ Рыночная модель ценной бумаги У. Шарп, Г. Александер, Д. Бэйли. Объясняющие - это доходность на акцию за 1 месяц $\displaystyle r$. Доходность на рыночный актив $\displaystyle r_{I}$.
+
+Добавим в следующей таблице приведены значения переменных $\displaystyle r$ b $\displaystyle r_{I}$ рыночной модели компании Лукойл.
+
+\textbf{	Вывод: }линейная модель имеет спецификацию (3.2.1), которая имеет следующие параметры ($\displaystyle a_{0} ,\ a_{1} ,\ \dotsc ,\ a_{k} ,\ \sigma _{u}$). Приступаем к статистической процедуре оценивания этих параметров.
+
+Разместим обучающую выборку при построении ЛММР в следующей таблице:
+\begin{table}[!h]
+        \centering
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ № наблюдений & $\displaystyle y$ & $\displaystyle x_{1} \ $ & $\displaystyle x_{2}$ & $\displaystyle \dotsc $ & $\displaystyle x_{k}$ \\
+\hline
+ 1 & $\displaystyle y_{1}$ & $\displaystyle x_{1,1}$ & $\displaystyle x_{2,1}$ & $\displaystyle \dotsc $ & $\displaystyle x_{k,1}$ \\
+\hline
+ 2 & $\displaystyle y_{2}$ & $\displaystyle x_{1,2}$ & $\displaystyle x_{2,2}$ & $\displaystyle \dotsc $ & $\displaystyle x_{k,2}$ \\
+\hline
+ $\displaystyle \vdots $ & $\displaystyle \vdots $ & $\displaystyle \vdots $ & $\displaystyle \vdots $ & $\displaystyle \dotsc $ & $\displaystyle \vdots $ \\
+\hline
+ n & $\displaystyle y_{n}$ & $\displaystyle x_{1,n}$ & $\displaystyle x_{2,n}$ & $\displaystyle \dotsc $ & $\displaystyle x_{k,n}$ \\
+ \hline
+\end{tabular}
+
+        \end{table}
+Подставляем каждую строчку в уравнение модели (2.1)
+
+В итоге получим следующую систему уравнений наблюдений в рамках (2.1):
+
+
+\begin{equation*}
+\begin{cases}
+y_{1} \ =\ a_{0} \ +\ a_{1} \ x_{1,1} \ +\ a_{2} \ x_{2,1} \ +\ \dotsc \ +\ a_{k} \ x_{k,1} \ +\ u\\
+y_{2} \ =\ a_{0} \ +\ a_{1} \ x_{1,2} \ +\ a_{2} \ x_{2,2} \ +\ \dotsc \ +\ a_{k} \ x_{k,2} \ +\ u\\
+\dotsc \\
+y_{n} \ =a_{0} \ +\ a_{1} \ x_{1,n} \ +\ a_{2} \ x_{2,n} \ +\ \dotsc \ +\ a_{k} \ x_{k,n} \ +\ u
+\end{cases}
+\end{equation*}
+Её принято называть схемой Гаусса-Маркова.
+
+Компактная запись:
+\begin{equation*}
+\vec{y} \ =\ X\ \cdot \vec{a} \ +\ \vec{u}
+\eqno(3.3.4)
+\end{equation*}
+$\displaystyle \vec{y}$ это схема левых частей. $\displaystyle X\ -$ это матрица значений объяняющих перменных, расширенная столбцом 1 (если есть свободный член $\displaystyle a_{0}$), $\displaystyle \vec{a} \ -$вектор коэффициентов модели $\displaystyle k+1$. $\displaystyle \vec{u} \ -\ $веутор случайных возмущейний.
+\end{document}
