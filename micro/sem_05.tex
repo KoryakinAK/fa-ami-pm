@@ -1,0 +1,201 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[14pt]{extsizes}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{cmap}
+% for fonts
+    \usepackage[T2A, T1]{fontenc}
+    \usepackage[english, russian]{babel}
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX,Renderer=Basic}
+    \setmainfont[Ligatures={TeX, Historic}]{Times New Roman}
+    \setsansfont{Times New Roman}
+    \setmonofont{Courier New}
+%plot
+%mathcha.io
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+%mathcha.io
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+%plot
+\usepackage{float}% for \begin{figure}[H]
+\usepackage{cases}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Аверьянов Тимофей, Корякин Алексей}
+\begin{document}
+\begin{center}
+\textbf{Лекция №6}
+
+\textbf{Модель Хикса потребления потребителя на рынке благ}
+
+\textbf{План}
+\end{center}
+
+\begin{enumerate}
+\item  Модель поведения потребителя Хикса в структурной форме и её трансформация к приведённой форме методом Лагранжа (задача математического программирования);
+\item  Функция расходов потребителя и её свойства
+\item $\displaystyle \boxed{\text{ДЗ}}$
+\end{enumerate}
+\begin{center}
+\textbf{Модель поведения потребителя Хикса}
+\end{center}
+	В моделе Хикса заложенно следующее утверждение: потребитель выбирает такой набор благ, который с одной стороны имеет наименьшую \textit{стоимость}, а с другой стороны предоставляет потребителю \textit{заданные уровень полезности}.
+
+	Вот математическая запись идей Хикса:
+
+
+\begin{equation}
+\begin{cases}
+M\ ={\displaystyle \sum ^{n}_{i=1} p_{i} x_{i}\rightarrow \min}\\
+u( x_{1} ,\ \dotsc ,\ x_{n}) \ =u_{0}\\
+x_{1} \ \geq 0,\ \dotsc ,\ x_{n} \geq 0
+\end{cases}
+\end{equation}
+Экзогенные переменные:
+
+
+\begin{equation*}
+\vec{p} =( p_{1} ,\ \dotsc ,\ p_{n}) ,\ u_{0} \ -\text{экзогенные переменные}
+\end{equation*}
+Эндогенные переменные:
+
+
+\begin{equation*}
+\vec{x} =( x_{1} ,\ \dotsc ,\ x_{n}) \ -\ \text{эндогенные переменные}
+\end{equation*}
+
+
+Выражение (1) - это структурная форма модели Хикса. С позиции математики модель (1) - это задача математического программирования на условный экстремум и решать такую задачу можно методом Лагранжа. Метод Лагранжа состоит из следующий шагов:
+\begin{enumerate}
+\item Составляется функция Лагранжа: $\displaystyle L={\displaystyle \sum _{i} p}_{i} \ x_{i} \ \ +\ l( M\ -\ u( x_{1} ,\ \dotsc ,\ x_{n}))$
+\item Cоставляется необходимое условие экстремума:
+\end{enumerate}
+\begin{equation}
+\begin{cases}
+\frac{\partial L}{\partial x_{i}} \ =0;\\
+\frac{\partial L}{\partial l} \ =\ 0;\\
+i\ =\ ( 1,\ 2,\dotsc ,\ n)
+\end{cases}
+\end{equation}
+	3. Эти условия представляют систему $\displaystyle n+1$ уравнений с $\displaystyle n+1$ переменной.
+
+	Система (4) решается либо аналитически, либо численно.
+
+
+\begin{equation}
+\vec{x}^{H} \ =\left( x^{H}_{1} ,\ \dotsc ,\ x^{H}_{n}\right) =\vec{x}^{H}\left(\vec{p} ,\ u_{0}\right)
+\end{equation}
+\begin{equation}
+l^{*} \ =l^{*}\left(\vec{p} ,u_{0}\right)
+\end{equation}
+\textbf{	Задача}. Пусть пространство благ двухметрно $\displaystyle \vec{x} \ =( x_{1} ,\ x_{2}) \in C\ \sqsubseteq R^{+}_{2}$.
+
+	Пусть функцией полезности потребителя служит логарифм Бернулли в ситуации двух благ эта функция имеет уравнение:
+
+
+\begin{equation*}
+u\ =a_{1} \ ( =\ 0.1) \ \cdotp \ \ln x_{1} \ +\ a_{2}( =\ 0.2) \ \cdotp \ \ln \ x_{2} \
+\end{equation*}
+Дано:
+
+$\displaystyle \vec{x} \ =\ \left( x_{1} \ \left( =\text{молоко}\right) ,\ x_{\ 2} \ \left( =\text{хлеб}\right)\right)$
+
+$\displaystyle M\ =\ 200$
+
+$\displaystyle p_{1} \ =\ 50\ \text{p/кг}$
+
+$\displaystyle p_{2} \ =\ 75\ \text{p/л}$
+
+На предшействующем семинаре мы отсыскали спрос потребителя по модели Маршала-Вальраса, задавшись значение $\displaystyle M\ =\ 200\ \text{руб.}$. Там же мы рассчитали уровень полезность спроса по Маршалу-Вальрассу:
+\begin{equation*}
+u\ =\ a_{1} \ \ln x_{1} \ +\ a_{2} \ \ln x_{2} \ =\ 0.1\ \ln \ 1.3\ \ +\ 0.2\ \ln 1.77\ =\ 0.14
+\end{equation*}
+\textbf{Найти:}
+
+Методом Лагранжа трансформировать к приведённой форме модель Хикса, зная, что $\displaystyle u_{0} \ =\ 0.14$. Вычислить спрос по Хиксу и стоимость спроса по Хиксу ($\displaystyle M^{*} ={\displaystyle \sum ^{2}_{i=1} p_{i} x^{H}_{i}}$(7)).
+
+\textbf{Решение:}
+
+	1. Функция Лагранжа:
+\begin{equation*}
+L( x_{1} ,\ x_{2} ,\ l) \ =p_{1} x_{1} \ +\ p_{2} x_{2} \ +l( u_{0} \ -\ ( a_{1} \ \cdotp \ \ln x_{1} \ +\ a_{2} \ \cdotp \ \ln \ x_{2}))
+\end{equation*}
+	2. Cоставляется необходимое условие экстремума:
+
+
+\begin{equation*}
+\begin{cases}
+\frac{\partial L}{\partial x_{1}} \ =\ p_{1} \ +l\frac{a_{1}}{x_{1}} \ =\ 0;\\
+\frac{\partial L}{\partial x_{2}} \ =\ p_{2} \ +l\frac{a_{2}}{x_{2}} \ =\ 0;\\
+\frac{\partial L}{\partial l} =u_{0} -a_{1} \ \cdotp \ \ln x_{1} \ -\ a_{2} \ \cdotp \ \ln \ x_{2} =0;
+\end{cases}
+\end{equation*}
+
+
+	3. $\displaystyle \boxed{\text{ДЗ}}$Решить систему и доказать, что решение этой системы методом подстановки имеет следующий вид:
+\begin{equation*}
+x^{*}_{1} \ =\beta \cdot e^{\frac{u_{0}}{\sum a_{i}}} \cdot p^{-\frac{a_{2}}{\sum a_{i}}}_{1} \cdot p^{\frac{a_{2}}{\sum a_{i}}}_{2} \eqno(3')
+\end{equation*}
+\begin{equation*}
+x^{*}_{2} \ =\ \gamma \cdot e^{\frac{u_{0}}{\sum a_{i}}} \cdot p^{\frac{a_{1}}{\sum a_{i}}}_{1} \cdot p^{-\frac{a_{1}}{\sum a_{i}}}_{2} \eqno(3')
+\end{equation*}
+\begin{equation*}
+l^{*} =\alpha \ \cdot e^{\frac{u_{0}}{\sum a_{i}}} \cdot p^{\frac{a_{2}}{\sum a_{i}}}_{1} \cdot p^{\frac{a_{2}}{\sum a_{i}}}_{2} \eqno(4')
+\end{equation*}
+Рассчитать численно значение спроса по Хиксу и параметры выше.
+\begin{center}
+\textbf{Функция рассходов потребителя и её свойства}
+\end{center}
+Функцией \textbf{рассходов потребителя} можно называть стоимость спроса по Хиксу, как функцию экзогенных переменных модели.
+
+
+\begin{equation*}
+M^{*} ={\displaystyle \sum _{i=1} p_{i} x^{H}_{i} =\ M^{*}\left(\vec{p} ,u_{0}\right)} \eqno(7)
+\end{equation*}
+Задача. Подстваит правые части из уравнения (3') в выражение (7) и получим следующее уравнение:
+
+$\displaystyle \boxed{\text{ДЗ}}$ Убедиться в правильности формулы (8):
+\begin{equation*}
+M^{*} \ =\ \psi \cdot e^{\frac{u_{0}}{\sum a_{i}}} \cdot p^{\frac{a_{1}}{\sum a_{i}}}_{1} \cdot p^{\frac{a_{2}}{\sum a_{i}}}_{2} \eqno(8)
+\end{equation*}
+$\displaystyle \boxed{\text{ДЗ}}$ Проверить справедливость уравнения (8), рассчитать $\displaystyle M^{*} \ $и сравнить полученное значение со значением $\displaystyle M_{0} =200\ \text{оуб.}$.
+
+\textbf{Задача. }Показать, что:
+
+	1. $\displaystyle M^{*} \uparrow u_{0} ;( 9)$
+
+	2. $\displaystyle M^{*} \uparrow p_{i} ;$
+
+\textbf{Решение:}
+
+Докажем (9):
+\begin{equation*}
+\frac{\partial M^{*}}{\partial u_{0}}  >0
+\end{equation*}
+\begin{equation*}
+M^{*} '_{u_{0}} =\psi \ \cdot \frac{1}{\sum a_{i}} \ \cdot e^{\frac{u_{0}}{\sum a_{i}}} \ \cdot p^{\frac{a_{1}}{\sum a_{i}}}_{1} \cdot p^{\frac{a_{2}}{\sum a_{i}}}_{2}  >0
+\end{equation*}
+\begin{equation*}
+M^{*} '_{p_{i}} \ =\ \psi \cdot e^{\frac{u_{0}}{\sum a_{i}}} \cdot p^{\frac{a_{2}}{\sum a_{i}}}_{2} \cdot \frac{a_{1}}{\sum a_{i}} \cdot p^{\frac{a_{1}}{\sum a_{i}} -1}_{1}
+\end{equation*}
+Кроме свойств 1 и 2 функция расходов потребителя является выпуклой вверх функцией:
+\begin{equation*}
+\boxed{\text{ДЗ}}\frac{\partial ^{2} M^{*}}{\partial p^{2}_{i}}  >0
+\end{equation*}
+\end{document}
