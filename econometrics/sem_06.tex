@@ -1,0 +1,191 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[14pt]{extsizes}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{cmap}
+% for fonts
+    \usepackage[T2A, T1]{fontenc}
+    \usepackage[english, russian]{babel}
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX,Renderer=Basic}
+    \setmainfont[Ligatures={TeX, Historic}]{Times New Roman}
+    \setsansfont{Times New Roman}
+    \setmonofont{Courier New}
+% mathcha
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+% mathcha
+\usepackage{pgfplots} % plot
+\usepackage{float} % for H at figure
+\usepackage{cases}
+\pgfplotsset{compat=1.15}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Аверьянов Тимофей, Корякин Алексей}
+\begin{document}
+\begin{center}
+\textbf{\section*{Cеминар №6}}
+\end{center}
+\begin{equation*}
+\begin{cases}
+C_{2003} \ =\ a_{0} \ +\ a_{1} \ \cdot Y_{2002} \ +\ a_{2} \ \cdot Cr_{2003} \ +\ a_{3} \ \cdot San_{2003} \ +\ u_{2003} ;\\
+C_{2017\ } \ a_{0} \ +\ a_{1} \ \cdot Y_{2016} \ +\ a_{2} \ \cdot Cr_{2017} \ +\ a_{3} \ \cdot San_{2017} \ +\ u_{2017} ;
+\end{cases}
+\end{equation*}
+
+\begin{equation*}
+P\ =\left( a_{0} ,\ a_{1} ,\ a_{2} ,\ a_{3} ;\ \sigma ^{2}_{u}\right)
+\end{equation*}
+
+
+Компактная запись:
+
+
+\begin{equation*}
+\vec{y} \ =\ X\ \cdot \overrightarrow{a\ } \ +\ \vec{u} ;
+\end{equation*}
+Ситуации уравнений (2) наблюдений составить формулу в компактную запись (4) этих уравнений.
+\begin{equation*}
+\vec{y} =\begin{pmatrix}
+C_{2003}\\
+\dotsc \\
+C_{2017}
+\end{pmatrix} ;\ \vec{a} \ =\ \begin{pmatrix}
+a_{0}\\
+a_{1}\\
+a_{2}\\
+a_{3}
+\end{pmatrix} ;X\ =\ \begin{pmatrix}
+1 & Y_{2002} & Gr_{2003} & San_{2003}\\
+\dotsc  & \dotsc  & \dotsc  & \dotsc \\
+1 & Y_{2016} & Gr_{2017} & San_{2017}
+\end{pmatrix} ;\vec{u} \ =\begin{pmatrix}
+u_{2003}\\
+\dotsc \\
+u_{2017}
+\end{pmatrix}
+\end{equation*}
+Обратим внимание, что первый столбец матрицы $\displaystyle X$, состоит из 1 тогда и только тогда, когда есть сводный член $\displaystyle a_{0}$. Вспоминая действия с матрицами мы проверим, что элементы компактной записи (5), модели (2), идентичны системе (2).
+
+Тогда в итоге получится:
+
+
+\begin{equation*}
+\begin{pmatrix}
+C_{2003}\\
+\dotsc \\
+C_{2017}
+\end{pmatrix} \ =\ \ \begin{pmatrix}
+1 & Y_{2002} & Gr_{2003} & San_{2003}\\
+\dotsc  & \dotsc  & \dotsc  & \dotsc \\
+1 & Y_{2016} & Gr_{2017} & San_{2017}
+\end{pmatrix} \cdot \begin{pmatrix}
+a_{0}\\
+a_{1}\\
+a_{2}\\
+a_{3}
+\end{pmatrix} \ +\ \begin{pmatrix}
+u_{2003}\\
+\dotsc \\
+u_{2017}
+\end{pmatrix}
+\end{equation*}
+$\displaystyle \boxed{\text{ДЗ}}$ составить элементы компактной запись, остальных двух элементов модифицированной модели Самуэльсона-Хикса.
+
+\textbf{Случайный вектор и его основные характеристики}
+
+Обратимся к компактной записи (4) и подчеркнём, что вектор случайных возмущений $\displaystyle \vec{u}$ предсавляет собой набор величин случайного вектора. У случайного вектора есть две важнейшие для практики количественные характеристики:
+
+	1. Математическое ожидание
+\begin{equation*}
+E\left(\vec{u}\right) \ =\ \begin{pmatrix}
+E( u_{1})\\
+\dotsc \\
+E( u_{n})
+\end{pmatrix} \ =\ \begin{pmatrix}
+0\\
+\dotsc \\
+0
+\end{pmatrix} \ =\ \vec{0} ;
+\end{equation*}
+	2. Ковариация:
+
+
+\begin{equation*}
+Cov\left(\vec{u} ,\vec{u}\right) \ =\ V\left(\vec{u}\right) \ =\ \begin{pmatrix}
+\sigma_{u_{1}}^{2} & \sigma _{1,2} & \dotsc  & \sigma _{1,n}\\
+\sigma_{2,1} & \sigma _{u_{2}}^{2} & \dotsc  & \sigma _{2,n}\\
+\dotsc  & \dotsc  & \ddots  & \dotsc \\
+\sigma _{n,1} & \sigma _{n,2} & \dotsc  & \sigma _{u_{n}}^{2}
+\end{pmatrix}
+\end{equation*}
+Обычно постурируется некоррелированность элементов случайного вектора (вектора случайных возмущений) и поэтому ковариционная матрица в вкекторе случайных возмущений (2) будет выглядить так:
+
+
+\begin{equation*}
+Cov\left(\vec{u} ,\vec{u}\right) \ =\ \sigma ^{2}_{u} \ \cdot \ I\ \left(\text{еденичная матрица}\right)
+\end{equation*}
+\begin{center}
+
+\textbf{Основные количественные характеристики аффинного преобразования случайного вектора}
+\end{center}
+
+\begin{equation*}
+\vec{v} \ =\ A\ \cdot \vec{u} \ +\ \vec{b}
+\end{equation*}
+Аффинным преобразование $\displaystyle \vec{u}$ является вектор $\displaystyle \vec{v}$, который рассчитывается по формуле (8).
+
+Вот важное для практики правила рассчёта основных характеристик вектора $\displaystyle \vec{b} .$
+
+
+\begin{equation*}
+E\left(\vec{v}\right) \ =\ A\ \cdot \ E\left(\vec{u}\right) \ +\ b;
+\end{equation*}
+\begin{equation*}
+Cov\left(\vec{u} ,\vec{u}\right) \ =\ A\ \cdot \ Cov\left(\vec{u} ,\vec{u}\right) \ \cdot \ A^{T} ;
+\end{equation*}
+
+
+Пусть в схеме Гаусса-Маркова (4) вектор $\displaystyle \vec{u}$ является случайным с остальными характеристиками и ковариционная матрица имеет вид (7'), $\displaystyle \vec{a}$ и $\displaystyle X$ является не случайными, показать:
+
+	1. Что вектор $\displaystyle \vec{y}$ будет случайным;
+
+	2. Определить его характеристики;
+
+В правой части (4) первое слагаемое $\displaystyle X\cdot \vec{a} \ =\ \alpha \ -$это вектор констант, его смысл смотри ниже, а второй вектор случайный $\displaystyle \vec{u}$ и мы можем трактовать вектор $\displaystyle \vec{y}$ выражения (4), как афинное преобразование ветора $\displaystyle \vec{u}$. Рассматривая уравнение (4) мы убеждаемя, что матрица $\displaystyle A$ является единичной и мы можем использовать вот эти важные для практики формулы:
+\begin{equation*}
+E\left(\vec{y}\right) \ =\alpha \ +\ I\cdot E\left(\vec{u}\right)( =0) \ =\ \alpha
+\end{equation*}
+Первое слагаемое в правой части (4) имеет смысл ожидаемого значения вектора $\displaystyle \vec{y}$, т.е. первое слагаемое состоит из компонент равных ожидаемых значений ($\displaystyle E\left(\vec{y}\right)$) эндогенной переменной модели.
+
+Тогда:
+\begin{equation*}
+Cov\left(\vec{y} ,\ \vec{y}\right) =I\ \cdot \ Cov\left(\vec{u} ,\vec{u}\right) \ \cdot \ I^{T} \ =\ Cov\left(\vec{u} ,\vec{u}\right) ;\ =\ \ \sigma ^{2}_{u} \ \cdot \ I
+\end{equation*}
+\begin{center}
+
+\textbf{Свойство оценок параметров методом наименьших квадратов}
+\end{center}
+На сегодняшней лекции мы сформулируем важный для практики результат $ $,состоящая в том, что оптимальные оценки коэффициентов вектора $\displaystyle \vec{a}$ из уравнения коэффициентов (4) вычисляются по правилу (11):
+
+
+\begin{equation*}
+\widetilde{\vec{a}} \ =\ \left( X^{T} \ \cdot X\right)^{-1} \ \cdot \ X^{T} \ \cdot \vec{y} ;
+\end{equation*}
+
+
+$\displaystyle \boxed{\text{ДЗ}}$ \ Показать, что вектор $\displaystyle \widetilde{\vec{a}}$ является случайным и опираясь на форммулы (9) найти ожидаемое значение вектора ($\displaystyle E\left(\widetilde{\vec{a}}\right) \ -\ ?$) и его коварриционную матрицу ($\displaystyle Cov\left(\widetilde{\vec{a}} ,\ \widetilde{\vec{a}}\right) -?$).
+\end{document}

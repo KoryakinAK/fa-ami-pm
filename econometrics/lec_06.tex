@@ -1,0 +1,208 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[14pt]{extsizes}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{cmap}
+% for fonts
+    \usepackage[T2A, T1]{fontenc}
+    \usepackage[english, russian]{babel}
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX,Renderer=Basic}
+    \setmainfont[Ligatures={TeX, Historic}]{Times New Roman}
+    \setsansfont{Times New Roman}
+    \setmonofont{Courier New}
+% mathcha
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+% mathcha
+\usepackage{pgfplots} % plot
+\usepackage{float} % for H at figure
+\usepackage{cases}
+\pgfplotsset{compat=1.15}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Аверьянов Тимофей, Корякин Алексей}
+\begin{document}
+\begin{center}
+\textbf{\section*{Лекция №6}}
+\end{center}
+
+Матрица $\displaystyle X$ непременно должная быть вертикальной строк должно быть больше чем стобцов.
+
+Символом $\displaystyle \vec{a} \ =\ ( a_{0} ,\ a_{1} ,\ a_{2} ,\ a_{3}) \ -$в компактной записи обозначен вектор коэффициентов модели. $\displaystyle \vec{u} \ -\ $вектор значения случайного возмущения, присутствующего в модели.
+
+Уравнения наблюдений необходимы для оценивания параметров модели и не редко под моделью понимают уравнение наблюдений:\begin{equation*}
+\vec{y} =\begin{pmatrix}
+C_{2003}\\
+\dotsc \\
+C_{2017}
+\end{pmatrix} ;\ \vec{a} \ =\ \begin{pmatrix}
+a_{0}\\
+a_{1}\\
+a_{2}\\
+a_{3}
+\end{pmatrix} ;X\ =\ \begin{pmatrix}
+x_{1,1} & x_{1,2} & \cdots  & x_{1,m}\\
+\dotsc  & \dotsc  & \dotsc  & \dotsc \\
+x_{n,1} & x_{n,2} & \dotsc  & x_{n,m}
+\end{pmatrix} ;\vec{u} \ =\begin{pmatrix}
+u_{2003}\\
+\dotsc \\
+u_{2017}
+\end{pmatrix}
+\eqno(1)
+\end{equation*}
+
+Подчёрнем, что экономист обладает информацией ввиде двух массивов $\displaystyle \left(\vec{y} ,\ X\right)$ связанные между собой уравнениями наблюдений. Упомянутые массивы мы будем называть \textit{выборкой.}
+\begin{center}
+\textbf{Понятие статистической процедуры}
+\end{center}
+Рассмторим лаканичную запись эконометрической модели:
+
+
+
+\begin{equation*}
+F\left( y_{t} ,\ \vec{x}_{t} ;\ \vec{p}\right) \ =u_{t}
+\end{equation*}	Пусть известна обучающая выборка. Статистической процедурой оценивания параметров модели принято называть некоторую функцию $\displaystyle \phi \left(\vec{y} ,X\right)$ выборки, значение этой функции являются оценки параметров модели:
+\begin{equation*}
+\widetilde{\vec{p}} \ =\ \begin{pmatrix}
+\widetilde{\vec{a}}\\
+\widetilde{\vec{\sigma }}^{2}_{n}
+\end{pmatrix} \ =\ \phi \left(\vec{y} ,X\right) \
+\eqno(2)
+\end{equation*}
+	Процедура $\displaystyle \phi \left(\vec{y} ,X\right) \ $называется оптимальной в заданном классе функций, если доставляемые ею оценки параметров обладают следующими свойствами:
+\begin{equation*}
+\begin{cases}
+E\left(\widetilde{\vec{p}} \ \right) \ =\ \vec{p} ;\\
+Var\left(\tilde{p}_{j}\right)\rightarrow \min ;
+\end{cases}
+\eqno(3)
+\end{equation*}
+	Математическое ожидание оценок парметров совпадает с истинными значениями. В математической статистике оценки с такими свойствами называют \textit{несмещёнными. }
+
+	Второе свойство означает, что средний квадратический разброс оценок параметров относительно истинных значений параметров является минимально возможным. Символом $\displaystyle Var$ мы обозначаем дисперсию оценок параметров.
+
+	\textbf{Итог:} статистическая процедура оценивания модели - это некоторая функция выборки, значениям этой функции служит оценки параметров. Процедура оптимальна в заданном классе функций, если её значения удовлетворяют требованиям (3).
+\begin{center}
+\textbf{Случайный вектор и его основые количественные характеристики}
+\end{center}
+Случайный вектор - это упорядоченный набор случайных перменных принято называть случайным вектором:
+\begin{equation*}
+\vec{x}^{T} \ =\ ( x_{1} ,\ x_{2} \ \dotsc ,\ x_{n})
+\eqno(4)
+\end{equation*}
+	Для практики важны следующие две случайные характеристики:
+
+	1. Математической ожидание случайного вектора
+\begin{equation*}
+E\left(\vec{x}^{T}\right) \ =\ \vec{m}^{T}_{\vec{x}} \ =\ ( m_{1} ,m_{2} ,\ \dotsc ,\ m_{n})
+\eqno(5)
+\end{equation*}
+	 	- это веткор из математический ожиданий случайных компонент. Математическое ожидание - это среднее значение. Математическое ожидание - это \textit{константа}.
+
+	2. Ковариционная матрица:
+\begin{equation*}
+Cov\left(\vec{u} ,\vec{u}\right) \ =\ \si{\ohm}_{\vec{x}} \ =\ \begin{pmatrix}
+\sigma _{1}^{2} & \sigma _{12} & \dotsc  & \sigma _{1n}\\
+\sigma _{21} & \sigma _{2}^{2} & \dotsc  & \sigma _{2,n}\\
+\dotsc  & \dotsc  & \ddots  & \dotsc \\
+\sigma _{n1} & \sigma _{n2} & \dotsc  & \sigma ^{2}_{n}
+\end{pmatrix}
+\eqno(6)
+\end{equation*}
+		так принято называть квадратную симметричную матрицу, на главной диагонали которой располагаются дисперсии компонент случайного вектора, а недиагональные элементы - это ковариации компонент. Ковариация, например $\displaystyle \sigma _{1n}$, это \textit{константа }характризующая взаимосвязь компоненты $\displaystyle x_{1}$ и $\displaystyle x_{n}$. Если $\displaystyle x_{1}$ и $\displaystyle x_{n}$ независимые, то $\displaystyle \sigma _{1n} \ =\ 0$.
+\begin{center}
+\textbf{Основые количественные характеристики афинного преобразования случайного вектора}
+\end{center}
+Афинное преобразование - это линейное неоднородное преобразование. Пусть символом $\displaystyle \vec{x}$ обозначен случайный вектор. Аффинным преобразованием этого вектора принято называть вектор $\displaystyle \vec{y}$, который вычисляется по следующему правилу:
+\begin{equation*}
+\vec{y} \ =\ A\ \cdot \vec{x} \ +\ \vec{b} ;
+\eqno(7)
+\end{equation*}
+	Здесь символом $\displaystyle A$ обозначена матрица коэффициентов (констант), символом $\displaystyle \vec{b}$ обозначен вектор констант.
+
+	Отметим правила расчёта основных характеристик аффинного преобразования:
+\begin{equation*}
+E\left(\vec{y}\right) \ =\ A\ \cdot E\left(\vec{x}\right) \ +\ \vec{b} ;
+\eqno(8)
+\end{equation*}
+\begin{equation*}
+Cov\left(\vec{y} ,\ \vec{y}\right) \ =\ A\ \cdot Cov\left(\vec{x} ,\ \vec{x}\right) \ +\ \vec{b} ;
+\eqno(9)
+\end{equation*}
+\begin{center}
+
+\textbf{Веса компонент случайного вектора и факторизация его ковариционной матрицы}
+\end{center}
+	Пусть $\displaystyle \vec{x}^{T} \ =\ ( x_{1} ,\ x_{2} \ \dotsc ,\ x_{n}) $ случайный вектор, пусть $\displaystyle x_{i}$ какая-то компонента вектора; вес компонент $\displaystyle x_{i} \ -\ $это константа, которая вычисляется по следующему правилу:
+
+
+\begin{equation*}
+p_{i} \ =\frac{\ \sigma ^{2}_{0}}{\ \sigma ^{2}_{i}}
+\eqno(10)
+\end{equation*}
+где $\displaystyle \sigma ^{2}_{0}$ обозначена произвольная, но фиксированная положительная коестанта. Понятие веса позваляет представить ковариционную матрицу $\displaystyle \vec{x}$ в следующем виде:
+
+
+\begin{equation*}
+Cov\left(\vec{x} ,\ \vec{x}\right) \ =\ \sigma ^{2}_{0} \cdot \begin{pmatrix}
+\sigma ^{2}_{1} /\sigma ^{2}_{0} & \sigma ^{2}_{12} /\sigma ^{2}_{0} & \dotsc  & \sigma ^{2}_{1n} /\sigma ^{2}_{0}\\
+\sigma ^{2}_{21} /\sigma ^{2}_{0} & \sigma ^{2}_{2} /\sigma ^{2}_{0} & \dotsc  & \sigma ^{2}_{2n} /\sigma ^{2}_{0}\\
+\dotsc  & \dotsc  & \dotsc  & \dotsc \\
+\sigma ^{2}_{1n} /\sigma ^{2}_{0} & \sigma ^{2}_{2n} /\sigma ^{2}_{0} & \dotsc  & \sigma ^{2}_{n} /\sigma ^{2}_{0}
+\end{pmatrix} \ =\sigma ^{2}_{0} \cdot Q\
+\eqno(11)
+\end{equation*}
+	Матрицу $\displaystyle Q$ принято называть матрицей \textit{весовых коэффициентов}. По главной диагонали этой матрицы размещаются обратные веса компонент.
+
+	Приступаем у обсуждению оптимальной процедуры оцениванию параметров линейной модели множественной регрессии.
+\begin{equation*}
+\tilde{y} \ =\ a_{0} \ +\ a_{1} \ x_{1} \ +\ a_{2} \ x_{2} \ +\ \dotsc \ +\ a_{k} \ x_{k}
+\end{equation*}
+\textbf{Теорема Гаусса-Маркова. }Пусть в уравнениях наблюдений,
+\begin{equation*}
+\vec{y} \ =\ X\ \cdot \vec{a} \ +\ \vec{u}
+\end{equation*}
+
+	0. Cтолбцы $\displaystyle X$ линейно независимые,
+
+	1. $\displaystyle E( u_{1}) \ =\ E( u_{2}) \ =\ \dotsc \ =E( u_{n}) \ =\ 0,\ $заложенно в спецификации;
+
+	2. $\displaystyle Var( u_{1}) \ =\ Var( u_{2}) \ =\ \dotsc \ =\ Var( u_{n}) \ =\ \sigma ^{2}_{u} ,$заложенно в спецификации;
+
+	3. $\displaystyle Cov( u_{i} ,\ u_{j}) \ =\ 0;\ \text{при} \ i\ \neq j;$ (в частности незваисимы друг от друга)
+
+	4. $\displaystyle Cov( u_{i} ,\ x_{li}) \ =\ 0$. Случайные возмущения некоррелированны с компонентами матрицы $\displaystyle x$.
+
+	Если все утверждения верны, тогда справедливы следующие утверждения:
+
+$\displaystyle A) \ \widetilde{\vec{a}} \ =\left( X^{T} \ \cdot \ X\right)^{-1} \ \cdot X^{T} \ \cdot \ \vec{y} \ =\ Q\ \cdot X^{T} \ \cdot \vec{y} ;$
+
+$\displaystyle B) \ \tilde{\sigma }^{2}_{u} \ =\ \frac{{\displaystyle \sum ^{n}_{i=1}\tilde{u}^{2}_{i}}}{n\ -\ ( k\ +1)} ,$ наилучшая оценка c минимальной дисперсией, где символом $\displaystyle \tilde{u}_{i}$ обозначена оценка случайного возмущения $\displaystyle u_{i}$. В знаменателе стоит число равная разности объёма обучающей выборки и количесвтва определяемых коэффициентов модели; это число называется количесвом степеней свободы. Оценки коэффициентов обладают замечательным свойством (С), которая служит общепринятое название $\displaystyle A$ метод наименьших квадратов.
+
+$\displaystyle C) \ {\displaystyle \sum ^{n}_{i=1}\tilde{u}^{2}_{i} \ \rightarrow \min .}$
+
+$\displaystyle Cov\left(\widetilde{\vec{a}} ,\ \widetilde{\vec{a}}\right) \ =\tilde{\sigma }^{2}_{u} \ \cdot \ $$\displaystyle \left( X^{T} \ \cdot \ X\right)^{-1} \ ( \ =Q)$.
+
+\textbf{Вывод:} Метод наименьших квадратов при определённых условиях является наилучшей процедурой оценивания линейных эконометрических моделей.
+
+$\displaystyle D) \ \begin{cases}
+S\tilde{a} \ =\tilde{\sigma }^{2}_{u} \ \cdot \sqrt{q_{j+1\ /\ j\ +1}} \ \\
+j\ =\ 0,1,\ \dotsc ,\ k
+\end{cases}$
+
+\end{document}
