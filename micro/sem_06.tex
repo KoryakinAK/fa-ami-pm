@@ -1,0 +1,197 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[14pt]{extsizes}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{cmap}
+% for fonts
+    \usepackage[T2A, T1]{fontenc}
+    \usepackage[english, russian]{babel}
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX,Renderer=Basic}
+    \setmainfont[Ligatures={TeX, Historic}]{Times New Roman}
+    \setsansfont{Times New Roman}
+    \setmonofont{Courier New}
+%plot
+%mathcha.io
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+%mathcha.io
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+%plot
+\usepackage{float}% for \begin{figure}[H]
+\usepackage{cases}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Аверьянов Тимофей, Корякин Алексей}
+\begin{document}
+\begin{center}
+\section*{Семинар №6. Двойственный характер модели поведения потребителя и уравнение Слутского}
+
+\textbf{План}
+\end{center}
+
+\begin{enumerate}
+\item Взаимосвязь спроса потребителя по Маршаллу-Вальрассу и по Хиксу. Уравнение Слутского;
+\item Рассчёт изменения спроса потребителя (по уравнениям Слутского) в ответ на изменнение цен благ;
+\item $\displaystyle \boxed{\text{ДЗ}}$
+\end{enumerate}
+
+На 4-ом и 5-ом занятиях рассчитали соответственно спрос потребителя по Маршалу-Вальрассу:
+
+
+\begin{equation*}
+\begin{cases}
+\vec{x}^{M-B}\left(\vec{p} ,M\right) \ =\vec{x}^{D} =\ \begin{pmatrix}
+1.3\\
+1.8
+\end{pmatrix} ;\\
+u\left(\vec{x}^{D}\right) \ =\ 0.14;\\
+M\ =200\text{руб.} ;\\
+p_{1} \ =\ 50;\ p_{2} \ =\ 75;
+\end{cases}
+\end{equation*}
+
+\begin{equation*}
+\boxed{u\ =a_{1} \ ( =\ 0.1) \ \cdotp \ \ln x_{1} \ +\ a_{2}( =\ 0.2) \ \cdotp \ \ln \ x_{2} \ }
+\end{equation*}
+
+\begin{equation*}
+\begin{cases}
+\vec{x}^{H} \ =\ \begin{pmatrix}
+1.3\\
+1.8
+\end{pmatrix} ;\\
+u_{0} \ =\ \underline{0.14} ,\ p_{1} \ =\ 50,\ p_{2} \ =\ 75;\\
+M^{*} \ =\ M\left(\vec{p} ,u_{0}\right) =p_{1} x^{H}_{1} \ +\ p_{2} x^{H}_{2} \ =\ 200\ \text{руб.;}
+\end{cases}
+\end{equation*}
+Случайно ли это? Совпадение спроса по Хиксу со спросом по Маршалу-Вальрассу в ситуации, когда экзогенно заданный уровень дохода потребителя равен стоимости спроса по Хиксу $\displaystyle M\ =\ M\left(\vec{p} ,u_{0}\right) \ =\ M^{*}$ совпадение не случайно. Справедливо слудующее тождество по $\displaystyle p$ и $\displaystyle u_{0}$:
+\begin{equation*}
+\boxed{\vec{x}^{D}\left(\vec{p} ,M\left(\vec{p} ,u_{0}\right)\right) \equiv \vec{x}^{H}\left(\vec{p} ,\ u_{0}\right)}
+\end{equation*}
+Тождество можно дифференцировать по $\displaystyle p$:
+\begin{equation*}
+\frac{\partial \vec{x}^{D}}{\partial \vec{p}}( n\times n) +\frac{\partial \vec{x}^{D}}{\partial M}( n\times 1) \ \cdot \ \frac{\partial M}{\partial \vec{p}}( 1\ \times n) \ =\ \frac{\partial \vec{x}^{H}}{\partial \vec{p}}( n\times n)
+\end{equation*}
+Уравнение (4) носит название основных уравнений теории полезностей или уравнение Слутского.
+\begin{equation*}
+\frac{\partial x^{D}_{i}}{\partial p_{j}} \ +\ \frac{\partial x^{D}_{i}}{\partial M} \ \cdot \frac{\partial M}{\partial p_{j}} \ =\frac{\partial x^{H}_{i}}{\partial p_{j}} \ i\ =\ 1,2,\ \dotsc n,\
+\end{equation*}
+Уравение Слутского связывают между собой значение предельного спроса по Хиксу (правая часть) со значением предельного спроса по Маршаллу-Вальрассу.
+
+\textit{Замечание. }Можно показать, что в левой части уравения (4) производная $\displaystyle \frac{\partial M}{\partial p_{j}}$ в точности равна спросу по Хиксу и в силу тождества (3):
+\begin{equation*}
+\frac{\partial M}{\partial p_{j}} =x^{H}_{j} =x^{D}_{j}
+\end{equation*}
+Экономисты называют уравнение (5) леммой Шепорта.
+
+$\displaystyle \boxed{\text{ДЗ}}$ (необязательное). Доказать уравнение (5) опираясь; проверить справделивость (5) в условиях домашней задачи. Продифференцировать по $\displaystyle p_{1} x^{H}_{1} \ +\ p_{2} x^{H}_{2}$. С учётом равенства (5) уравнение Слутского приобретает следующий вид (с учётом (5)):
+\begin{equation*}
+\frac{\partial \vec{x}^{D}}{\partial \vec{p}}( n\times n) \ =\ \ \frac{\partial \vec{x}^{H}}{\partial \vec{p}}( n\times n) \ -\ \frac{\partial \vec{x}^{D}}{\partial M}( n\times 1) \ \cdot (\vec{x}^{D})^{T}( 1\times n)
+\end{equation*}
+\textbf{Вывод: }модели Маршалла-Вальрасса и Хикса связаны между собой тождеством двойсвтенности (3). Дифференцирование этого тождества по $\displaystyle p$ приводит к уравнению Слутского (4), которые связывают между собой предельный спрос по Маршаллу-Вальрасу с предельным спросом по Хиксу. В правой части равенства (4) находится симетричная матрица, которая назвается матрицей Слусткого и обозначается:
+\begin{equation*}
+S=\frac{\partial \vec{x}^{H}}{\partial \vec{p}}( n\times n)
+\end{equation*}
+\begin{center}
+
+\textbf{Рассчёт изменение спроса потребителя в ответ на изменение цен товара (по уравнениям Слутского)}
+\end{center}
+Вернёмся к условиям наших задач отмеченных в выражениях (1) и (2) и предположим, что цены изменились на некоторую величину $\displaystyle \vartriangle \vec{p}$; предположим, что $\displaystyle \vartriangle \vec{p}_{1}$ не изменилась, $\displaystyle \vartriangle \vec{p}_{2}$ увеличилось.
+\begin{equation*}
+\vartriangle \vec{p} \ =\ \begin{pmatrix}
+\vartriangle \vec{p}_{1}\\
+\vartriangle \vec{p}_{2}
+\end{pmatrix} \ =\ \begin{pmatrix}
+0\\
+5
+\end{pmatrix} ;
+\end{equation*}
+Требуется рассчитать изменение спрос по М-В и Хиксу.
+
+Порядок рассчёта:
+
+	1.
+\begin{equation*}
+\frac{\partial \vec{x}^{D}}{\partial \vec{p}} \cdot \vartriangle \vec{p} \ \left( =\ \vartriangle \vec{x}^{D}\right) =\frac{\partial \vec{x}^{H}}{\partial \vec{p}} \ \ \cdot \vartriangle \vec{p}\left( \ =\vec{x}^{H}\right) \ -\ \ \frac{\partial \vec{x}^{D}}{\partial M}( n\times 1) \ \cdot (\vec{x}^{D})^{T}( 1\times n) \ \cdot \vartriangle \vec{p} \ \left( =\vartriangle \vec{x}^{YE}\right)
+\end{equation*}
+
+
+$\displaystyle \vartriangle \vec{x}^{YE}$ вычитаемое экономисты называют эффектом дохода. $\displaystyle \vec{x}^{H} \ =\vec{x}^{SE} \ \ -\ $эффект замещения. $\displaystyle \vec{x}^{D} \ =\ \vec{x}^{GE}$- генеральное.
+
+	2.
+\begin{equation*}
+\vartriangle \vec{x}^{D} \ =\begin{pmatrix}
+\frac{a_{1}}{\sum a_{i}} \cdot \frac{M}{p_{1}}\\
+\frac{a_{2}}{\sum a_{i}} \cdot \frac{M}{p_{2}}
+\end{pmatrix} \ =\begin{pmatrix}
+0.33\cdot \frac{M}{p_{1}}\\
+0.67\cdot \frac{M}{p_{2}}
+\end{pmatrix} \
+\end{equation*}
+\begin{equation*}
+\frac{\partial \vec{x}^{D}}{\partial \vec{p}} \ =\frac{\partial x^{D}_{i}}{\partial p_{j}} \ =\ \begin{pmatrix}
+0.33\cdot \frac{M}{p_{1}} & 0\\
+0 & 0.67\cdot \frac{M}{p_{2}}
+\end{pmatrix} \
+\end{equation*}
+$\displaystyle \boxed{\text{ДЗ}}$ Дать экономескую трактовку столбцам матрицы
+
+
+\begin{equation*}
+\vartriangle \vec{x}^{D} \ =\ \vartriangle \vec{x}^{GE} \ =\ \frac{\partial \vec{x}^{D}}{\partial \vec{p}} \ \cdot \vartriangle \vec{p} \ =\ \begin{pmatrix}
+0.33\cdot \frac{200}{50^{2}} & 0\\
+0 & 0.67\cdot \frac{200}{75^{2}}
+\end{pmatrix} \ \cdot \begin{pmatrix}
+0\\
+5
+\end{pmatrix} =\ \begin{pmatrix}
+\vartriangle x^{D}_{1}\\
+\vartriangle x^{D}_{2}
+\end{pmatrix}
+\end{equation*}
+$\displaystyle \boxed{\text{ДЗ}}$ Посчитать.
+
+	3. Вернёмся к (6). Нам будет удобно на третьем шаге рассчитать вычиатемое в правой части (6) эффект дохода.
+\begin{gather*}
+\frac{\partial \vec{x}^{D}}{\partial M} \ =\ \begin{pmatrix}
+\frac{0.33}{p_{1}}\\
+\frac{0.67}{p_{2}}
+\end{pmatrix}( =S) \ ;\ \frac{\partial \vec{x}^{D}}{\partial M} \ \cdot (\vec{x}^{D})^{T} \ =\ \begin{pmatrix}
+\frac{0.33}{p_{1}}\\
+\frac{0.67}{p_{2}}
+\end{pmatrix} \ \cdot \begin{pmatrix}
+1.3 & 1.8
+\end{pmatrix} =\\
+=\begin{pmatrix}
+\frac{0.33}{p_{1}} \cdot 1.3 & \frac{0.33}{p_{1}} \cdot 1.8\\
+\frac{0.67}{p_{2}} \cdot 1.3 & \frac{0.67}{p_{2}} \cdot 1.8
+\end{pmatrix}
+\end{gather*}
+
+\begin{equation*}
+\vartriangle \vec{x}^{YE} \ =\ \frac{\partial \vec{x}^{D}}{\partial M} \ \cdot (\vec{x}^{D})^{T} \cdot \begin{pmatrix}
+0\\
+5
+\end{pmatrix}
+\end{equation*}
+	4.$\displaystyle \boxed{\text{ДЗ}}$ Вычисляем вычисление спроса по Хиксу по правилу:
+\begin{equation*}
+\vec{x}^{H} \ =\vec{x}^{SE} \ =\ \vartriangle \vec{x}^{D} \ +\ \vartriangle \vec{x}^{YE}
+\end{equation*}
+\end{document}
