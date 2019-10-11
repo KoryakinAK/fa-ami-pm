@@ -1,0 +1,305 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[14pt]{extsizes}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{cmap}
+% for fonts
+    \usepackage[T2A, T1]{fontenc}
+    \usepackage[english, russian]{babel}
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX,Renderer=Basic}
+    \setmainfont[Ligatures={TeX, Historic}]{Times New Roman}
+    \setsansfont{Times New Roman}
+    \setmonofont{Courier New}
+%plot
+%mathcha.io
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+%mathcha.io
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+%plot
+\usepackage{float}% for \begin{figure}[H]
+\usepackage{cases}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Аверьянов Тимофей, Корякин Алексей}
+\begin{document}
+\begin{center}
+\section*{Лекция №3. Модели потребления потребителя и уравнение Слутского}
+
+\textbf{\large План}
+\end{center}
+
+\begin{enumerate}
+\item Модель Маршала-Вальрасса, свойства функции спроса и косвенная функция полезности;
+\item Модель Хикса, функция расходов, лемма Шепарда и матрица Слуцкого;
+\item Двойственный характер моделей поведения потребителя (взаимосвязь моделей) и уравнение Слуцкого;
+\item Классификация благ в спросе потребителя.
+\end{enumerate}
+
+На предыдущей лекции обсудили модель способности потребителя сопоставлять наборы благ (отношение слабого предпочтения) и \textbf{теорему Дэбре}, \textit{что у любого потребителя, умеющего непротиворичиво сопоставлять наборы благ, существует функция полезности. }Понятие функции полезности лежит в основании моделей поведения потребителя. Начнём с модели Маршалла-Вальраса
+
+Экзогенные величины модели:
+\begin{enumerate}
+\item $\displaystyle C\ -$пространство благ и их цены $\displaystyle ( p_{1} ,\ p_{2} ,\ \dotsc ,\ p_{n})$;
+\item $\displaystyle u( x_{1} ,\ x_{2} ,\ \dotsc ,\ x_{n}) -$функция полезности;
+\item $\displaystyle M\ -$ доход потребителя.
+\end{enumerate}
+
+Эндогенные переменные модели:
+\begin{enumerate}
+\item Наилучший и доступный потребителю набор благ $\displaystyle \left( x^{*}_{1} ,\ x^{*}_{2} ,\ \dotsc ,\ x^{*}_{n}\right)$.
+\end{enumerate}
+
+Структурная форма модели (потребитель пытается найти такой набор благ, который наиболее полезен ему, но и по карману):
+\begin{equation*}
+\begin{cases}
+u\ =\ u( x_{1} ,\ \dotsc ,\ x_{n}) \ \rightarrow \max\\
+{\displaystyle \sum ^{n}_{i=1} p_{i} x_{i} \ \leq \ M}\\
+( x_{1} \ \geq \ 0,\ \dotsc ,\ x_{n} \ \geq 0) \ \in C
+\end{cases}
+\eqno(1)
+\end{equation*}
+К приведённой форме модель (1) трансформируется методом Лагранжа:
+\begin{enumerate}
+\item Составляется функция Лагранжа: $\displaystyle L=\ u( x_{1} ,\ \dotsc ,\ x_{n}) \ +\ l\left( M\ -\ {\displaystyle \sum _{i} p}_{i} \ x_{i}\right)$
+\item Cоставляется необходимое условие экстремума:
+\end{enumerate}
+\begin{equation*}
+\begin{cases}
+\frac{\partial L}{\partial x_{i}} \ =\frac{\partial u}{\partial x_{i}} -l\cdot p\ =\ 0;\\
+\frac{\partial L}{\partial l} \ =\ M\ -{\displaystyle \sum _{i} p}_{i} \ x_{i} \ =\ 0;\\
+i\ =\ ( 1,\ \dotsc ,\ n)
+\end{cases}
+\eqno(2)
+\end{equation*}
+	3. Эти условия представляют систему $\displaystyle n+1$ уравнений с $\displaystyle n+1$ переменной.
+
+Система (3) решается либо аналитически, либо численно. Итогом решения является: $\displaystyle \vec{x}^{D} =\vec{x}^{*} =\vec{x}^{D} \ ( M,p_{1} ,\ \dotsc ,\ p_{n})$ и множитель Лагранжа $\displaystyle l\ =\ l\ ( M,p_{1} ,\ \dotsc ,\ p_{n})$.
+
+Набор эндогенных переменных расчитанных по Маршаллу-Вальрасу принято называть спросом потребителя по Маршаллу-Вальрасу. Проиллюстрируем на графике это спрсс в ситуации двух благ:
+
+
+
+\begin{figure}[H]
+  \begin{center}
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    %uncomment if require: \path (0,260.125); %set diagram left start at 0, and has height of 260.125
+
+    %Shape: Axis 2D [id:dp647175273357639]
+    \draw  (32,199.77) -- (407.3,199.77)(69.53,24) -- (69.53,219.3) (400.3,194.77) -- (407.3,199.77) -- (400.3,204.77) (64.53,31) -- (69.53,24) -- (74.53,31)  ;
+    %Straight Lines [id:da4350422961567375]
+    \draw    (69.3,74.73) -- (186.3,199.73) ;
+
+
+    %Curve Lines [id:da7479568716237568]
+    \draw [color={rgb, 255:red, 246; green, 132; blue, 6 }  ,draw opacity=1 ]   (87.3,56.32) .. controls (88.3,78.32) and (87.3,154.32) .. (240.3,157.32) ;
+
+
+    %Curve Lines [id:da30405154004010315]
+    \draw [color={rgb, 255:red, 193; green, 174; blue, 45 }  ,draw opacity=1 ]   (79.3,35.32) .. controls (74.35,63.81) and (86.27,114.54) .. (132.88,145.96) .. controls (161.53,165.27) and (203.29,177.27) .. (262.3,172.32) ;
+
+
+    %Curve Lines [id:da5212116847087305]
+    \draw [color={rgb, 255:red, 202; green, 210; blue, 57 }  ,draw opacity=1 ]   (103.3,49.32) .. controls (104.3,71.32) and (105.3,146.32) .. (258.3,149.32) ;
+
+
+    %Curve Lines [id:da6122550453665694]
+    \draw [color={rgb, 255:red, 193; green, 174; blue, 45 }  ,draw opacity=1 ]   (73.3,36.32) .. controls (68.35,64.81) and (78.27,129.54) .. (124.88,160.96) .. controls (171.48,192.37) and (220.29,190.27) .. (279.3,185.32) ;
+
+
+
+    % Text Node
+    \draw (49,75) node  [align=left] {$\displaystyle \frac{M}{p_{2}}$};
+    % Text Node
+    \draw (196,230) node  [align=left] {$\displaystyle \frac{M}{p_{1}}$};
+    % Text Node
+    \draw (123,111) node  [align=left] {$\displaystyle \vec{x}^{*}$};
+    % Text Node
+    \draw (204,139) node  [align=left] {$\displaystyle \vec{u}^{^{-}}_{*}$};
+
+
+    \end{tikzpicture}
+  \end{center}
+\end{figure}
+
+Кривые линии - это множества безразличия. Другими словами - это линии уровня функции полезности потребителя. Оранжевая полоса показывает линию максимального возможного уровня функции полезности, такую которая имеет единственную точку с множеством доступных потребителю набором благ; точку касания кривой безразличия $\displaystyle u^{*}$ с границей множества допустимых наборов мы обозначаем символом $\displaystyle \vec{x}^{*}$ и именно координаты этой точки удовлетваряют моделе (1).
+\begin{center}
+\textbf{Свойства функции спроса и косвенная функция полезности}
+\end{center}
+Если все цены и доход изменяются в одно и тоже количество раз $\displaystyle m$, то спрос потребителя не меняется, т.е. функция спроса является однородной нулевой степени:
+\begin{equation*}
+\begin{cases}
+\vec{x}^{*} =\vec{x}^{D}\left( m\ \cdot \vec{p} ,m\ \cdot M\right) =\vec{x}^{D}\left(\vec{p} ,\ M\right)\\
+m\  >\ 0;
+\end{cases}
+\end{equation*}
+Косвенная функция полезности потребителя экономисты называют \textbf{приведённую форму функцию полезности в моделе Маршалла-Вальраса}:
+\begin{equation*}
+u\ =u^{*}\left(\vec{x}^{*}\right) =\ u^{*}\left(\vec{p} ,\ M\right)
+\eqno(3)
+\end{equation*}
+Значение косвенной функции полезности равно \textit{уровню полезности}.
+
+\textbf{Справдливо следующее равенство, расскрывающее}\textbf{ смысл мнодителя Лагранжа:}
+\begin{equation*}
+\frac{\partial u^{*}}{\partial M} \ =\ l^{*} ;
+\eqno(4)
+\end{equation*}
+В левой части этого равенства находится велечина называемая \textit{предельной полезностью по доходу} и имеющая смысл: \textit{дополнительной полезности потребителя в ответ на дополнительную единицу дохода. }Завершая обсуждение модели Маршалла-Вальраса отметим следующее равенство:
+\begin{equation*}
+\frac{\partial u^{*}}{\partial p_{i}} =\ -x^{*}_{i} \cdot \frac{\partial u^{*}}{\partial M}
+\eqno(5)
+\end{equation*}
+которое принято называть \textit{тождеством Роя. }Предельная полезность отрицательная.
+\begin{center}
+\textbf{Модель Хикса}
+\end{center}
+В модели Хикса заложенна другая точка зрения: потребитель выбирает такой набор благ, который с одной стороны имеет наименьшую стоимость, а с другой стороны доставляет потребителю заданный уровень полезности. Модель Хикса имеет следующую структурную форму
+\begin{equation*}
+\begin{cases}
+M\ ={\displaystyle \sum ^{n}_{i=1} p_{i} x_{i}\rightarrow \min}\\
+u( x_{1} ,\ \dotsc ,\ x_{n}) \ =u_{0}\\
+x_{1} \ \geq 0,\ \dotsc ,\ x_{n} \geq 0
+\end{cases}
+\eqno(6)
+\end{equation*}
+где экзогенные переменные:
+\begin{equation*}
+\vec{p} =( p_{1} ,\ \dotsc ,\ p_{n}) ,\ u( x_{1} ,\ \dotsc ,\ x_{n}) ,\ u_{0} \
+\eqno(7)
+\end{equation*}
+Эндогенные переменные:
+\begin{equation*}
+\vec{x} =( x_{1} ,\ \dotsc ,\ x_{n}) \ -\ \text{значение благ потребителя}
+\eqno(8)
+\end{equation*}
+Трансформация к приведённой форме позволяет определить спрос по Хиксу и множитель Лагранжа
+\begin{equation*}
+\begin{cases}
+\vec{x}^{H} =\vec{x}^{*} =\vec{x}^{H}\left(\vec{p} ,u_{0}\right) ;\\
+l^{*} \ =\ l^{*}\left(\vec{p} ,u_{0}\right)
+\end{cases}
+\end{equation*}
+Свойства функции спроса по Хиксу:
+\begin{equation*}
+\begin{cases}
+\vec{x}^{H} =\vec{x}^{H}\left(\vec{p} ,u_{0}\right) \ =\vec{x}^{H}\left( m\cdot \vec{p} ,u_{0}\right) ;\\
+m >0
+\end{cases}
+\end{equation*}
+Функция спрса по Хиксу является однородной функцией нулевой степени по ценам благ. Если цены всех раз изменить в $\displaystyle m$ раз, то спрос не меняется и остаётся на уровне полезности $\displaystyle u_{0}$.
+
+Приведённая форма целевой функции модели Хикса называется функцией расходов потребителя и её значение это \textit{стоимость спрса по Хиксу:}
+\begin{equation*}
+M^{*} ={\displaystyle \sum _{i=1} p_{i} x^{H}_{i} =\ M^{*}\left(\vec{p} ,u_{0}\right)}
+\eqno(9)
+\end{equation*}
+Отметим два свойства:
+
+1. Если все цены изменяются одновременно в $\displaystyle m$ раз, то значение функции расходов возрастает в $\displaystyle m$ раз:
+
+\begin{equation*}
+{\displaystyle M^{*}\left( m\cdot \vec{p} ,u_{0}\right) \ =\ m\ \cdot M^{*}\left(\vec{p} ,u_{0}\right) ,\ m\  >0}
+\end{equation*}2. Функция возрастает по цене данного блага
+
+3. Функция расходов выпкла вверх, то есть:
+\begin{equation*}
+\frac{\partial ^{2} M^{*}}{\partial p^{2}_{i}} < 0
+\eqno(10)
+\end{equation*}
+Два последних свойства такие же как у функции полезности. Завершая обсуждение модели Хикса дадим наглядную интерпритацию спроса по Хиксу в результате двух благ:
+
+\begin{figure}[H]
+  \begin{center}
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    %uncomment if require: \path (0,260.125); %set diagram left start at 0, and has height of 260.125
+
+    %Shape: Axis 2D [id:dp8325304749902642]
+    \draw  (32,199.77) -- (407.3,199.77)(69.53,24) -- (69.53,219.3) (400.3,194.77) -- (407.3,199.77) -- (400.3,204.77) (64.53,31) -- (69.53,24) -- (74.53,31)  ;
+    %Straight Lines [id:da1028876714178546]
+    \draw    (69.3,74.73) -- (186.3,199.73) ;
+
+
+    %Curve Lines [id:da7449604802599368]
+    \draw [color={rgb, 255:red, 246; green, 132; blue, 6 }  ,draw opacity=1 ]   (87.3,56.32) .. controls (88.3,78.32) and (112.3,180.14) .. (265.3,183.14) ;
+
+
+    %Straight Lines [id:da11663696090580422]
+    \draw    (69.3,121.74) -- (145.3,199.74) ;
+
+
+    %Straight Lines [id:da8049115665358066]
+    \draw    (69.3,162.74) -- (106.3,199.74) ;
+
+
+
+    % Text Node
+    \draw (49,75) node  [align=left] {$\displaystyle \frac{M^{*}}{p_{2}}$};
+    % Text Node
+    \draw (196,230) node  [align=left] {$\displaystyle \frac{M^{*}}{p_{1}}$};
+    % Text Node
+    \draw (134,115) node  [align=left] {$\displaystyle \vec{x}^{H}$};
+    % Text Node
+    \draw (220,156) node  [align=left] {$\displaystyle \vec{u}^{^{-}}_{0}$};
+    % Text Node
+    \draw (416,217) node  [align=left] {$\displaystyle x_{1}$};
+    % Text Node
+    \draw (47,21) node  [align=left] {$\displaystyle x_{2}$};
+
+
+    \end{tikzpicture}
+  \end{center}
+\end{figure}
+
+Прямыми линиями обозначены лини уровня функции расходов, то есть наборы благ на этих уровнях имеют одинаковую стоимость. Ораневой линией нарисована кривая безразличия заданного уровня $\displaystyle u_{0}$. Спрос по Хиксу назодится в точке касания кривой безразличия $\displaystyle \vec{u}^{-}_{0}$ с линией минимально возмодного уровня функции спроса.
+\begin{center}
+\textbf{Двойственный характер моделей поведения потребителя (взаимосвязь моделей) и уравнение Слуцкого}
+\end{center}
+Следщая теорема устанавляивает взаимосвязь моделей поведения потребителя (Занятие №6)
+
+\textbf{Теорема. }Вернёмся к $\displaystyle \vec{x}^{D}\left(\vec{p} ,\ M\right)$ и пусть теперь уровень дохода потребителя совпадает со стоимостью спроса по Хиксу. Тогда справедливы два тождества:
+
+1) Тождество по экзогенным переменным $\displaystyle \left(\vec{p} ,u_{0}\right)$:
+\begin{equation*}
+\vec{x}^{H}\left(\vec{p} ,u_{0}\right) =\vec{x}^{D}\left(\vec{p} ,\ {\displaystyle M^{*}\left(\vec{p} ,u_{0}\right)}\right)
+\eqno(11)
+\end{equation*}
+2)Тождество по экзогенным переменным $\displaystyle \left(\vec{p}\right)$:
+\begin{equation*}
+u\left(\vec{x}^{D}\left(\vec{p} ,\ {\displaystyle M^{*}\left(\vec{p} ,u_{0}\right)}\right)\right) =u_{0}
+\eqno(12)
+\end{equation*}
+\textbf{Следствие из теоремы (уравнение Слуцкого).} Наша цель состоит в установлении взаимосвязи изменений спроса по Хиксу и Маршаллу-Вальрасу в ответ на изменение цен благ. Продифференцируем тождество (11) по ценам и в итоге получим следующие уравнения:
+\begin{equation*}
+\frac{\partial \vec{x}^{D}}{\partial \vec{p}} =S-\ \frac{\partial \vec{x}^{D}}{\partial M^{*}} \cdot \left(\vec{x}^{D}\right)^{T}
+\end{equation*}
+Подробная запись:
+\begin{equation*}
+\frac{\partial \vec{x}^{D}_{i}}{\partial \vec{p}_{j}} =s_{ij} -\ \frac{\partial \vec{x}^{D}_{i}}{\partial M^{*}} \cdot \left(\vec{x}^{D}\right)^{T}
+\end{equation*}
+Символом S обозначена слудующая матрица, которая называется матрицей Слуцкого и имеет смысл \textit{предельного спроса Хикса по ценам}:
+\begin{equation*}
+S\ =\ \frac{\partial \vec{x}^{H}}{\partial \vec{p}} \ \cdot \vartriangle \vec{p} \ =\ \left(\frac{\partial \vec{x}^{H}}{\partial \vec{p}} \ +\ \frac{\partial \vec{x}^{H}}{\partial M^{*}} \cdot \frac{\partial M^{*}}{\partial \vec{p}}\right) \cdot \vartriangle \vec{p} \
+\end{equation*}
+\textbf{Итог. }Равенство (11) и (12) называются тожедествами двойственности моделей поведения потребителя. Уравнения Слуцкого ($\displaystyle \frac{\partial \vec{x}^{H}}{\partial \vec{p}}$) задают взаимосвязь предельного спроса по Маршаллу-Вальраса и Хикса и называются основными теориями полезности.
+\end{document}
