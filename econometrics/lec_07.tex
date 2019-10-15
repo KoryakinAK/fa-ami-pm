@@ -1,0 +1,284 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[14pt]{extsizes}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{cmap}
+% for fonts
+    \usepackage[T2A, T1]{fontenc}
+    \usepackage[english, russian]{babel}
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX,Renderer=Basic}
+    \setmainfont[Ligatures={TeX, Historic}]{Times New Roman}
+    \setsansfont{Times New Roman}
+    \setmonofont{Courier New}
+% mathcha
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+% mathcha
+\usepackage{pgfplots} % plot
+\usepackage{float} % for H at figure
+\usepackage{cases}
+\pgfplotsset{compat=1.15}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Аверьянов Тимофей, Корякин Алексей}
+\begin{document}
+\begin{center}
+\textbf{\section*{Лекция №7}}
+\begin{center}
+\textbf{Доказательство теоремы Гаусса-Маркова}
+
+\textbf{План}
+\end{center}
+
+\begin{enumerate}
+\item Необходимые сведенья из теории вероятности;
+\item Доказательство теоремы Гаусса-Маркова;
+\item Консольтуция;
+\end{enumerate}
+
+В первом пункте мы вспомним те сведенья из теории вероятностей, которые необходимы в эконометрике и конкретно в доказательстве теоремы Гаусса-Маркова. Начнём с понятия случайной переменной. \textbf{Случайной переменной }$\displaystyle u\ -$ называется переменная велечина, возможные значения которой $\displaystyle ( q_{1} ,\ q_{2} ,\ \dotsc ,\ q_{n})$ появляются в результате некоторого эксперимента (опыта) с вероятностями этих значений $\displaystyle ( p_{1} ,\ p_{2} ,\ \dotsc ,\ p_{n})$; Вот полная запись определения случайной переменной, которая называется \textit{законом распределения}:
+\begin{equation*}
+u=\begin{Bmatrix}
+q_{1} ,\ q_{2} ,\ \dotsc ,\ q_{n}\\
+p_{1} ,\ p_{2} ,\ \dotsc ,\ p_{n}
+\end{Bmatrix} .
+\end{equation*}
+Поясним примером понятие случайной переменной:
+
+Опыт состоит в бросании монеты. Если монета выпала гербом, то мы будем считать, что наша переменная $\displaystyle u$ приняла значение $\displaystyle -14$, а если выпадает решка, то мы предполагаем, что наша переменная приняла значение $\displaystyle +14$, мы можем записать в следующем виде:
+\begin{equation*}
+u=\begin{cases}
+-n,\ \text{если герб}\\
+n,\ \text{если решка}
+\end{cases}
+\end{equation*}
+\textbf{Основные характеристики случайной переменной:}
+
+Первая характеристика - это \textit{математическое ожидание}, так называют константу которая вычисляется по правилу:
+\begin{equation*}
+m\ =E( u) \ =\ p_{1} \cdot q_{1} \ +p_{2} \ \cdot q_{2} \ +\ \dotsc p_{n} \ \cdot q_{n} ;
+\end{equation*}
+Вторая характеристика называется дисперсией $\displaystyle Var$ и рассчитывается по правилу:
+\begin{equation*}
+Var( u) \ =\ \ p_{1} \cdot ( q_{1} -m)^{2} \ +p_{2} \ \cdot ( q_{2} -m)^{2} \ +\ \dotsc p_{n} \ \cdot ( q_{n} -m)^{2}
+\end{equation*}
+\textit{Дисперсия} - это константа равная среднему квадрату разброса возможных значений случайной переменной относительно математического ожидания. Положительно квадратный корень из дисперсии называется средним квадратическим отклонением.
+
+$\displaystyle \boxed{\text{ДЗ}}$ Доказать, что в приведённом выше примере $\displaystyle \sigma \ =\ 14$. Доказать, что самый точный прогноз случайной переменной - это её математическон ожидание, то есть доказать:
+\begin{equation*}
+\underset{c}{min} \ E( u\ -c)^{2} =E( u\ -\ E( u))^{2} =\sigma ^{2}_{u}
+\end{equation*}
+
+\begin{figure}[H]
+  \begin{center}
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    %uncomment if require: \path (0,235.66249084472656); %set diagram left start at 0, and has height of 235.66249084472656
+
+    %Straight Lines [id:da7782114268165767]
+    \draw    (24.3,158.76) -- (322.22,158.62) ;
+    \draw [shift={(324.22,158.62)}, rotate = 539.97] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+    %Straight Lines [id:da2654967786229232]
+    \draw    (169.54,201.46) -- (169.54,20.46) ;
+    \draw [shift={(169.54,18.46)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+    %Straight Lines [id:da5252393757132243]
+    \draw    (133.74,70.02) -- (133.74,159.73) ;
+
+
+    %Straight Lines [id:da07841528529376496]
+    \draw    (202.94,55.5) -- (202.72,158.28) ;
+
+
+    %Straight Lines [id:da7907224487837343]
+    \draw    (233.22,96.16) -- (233.22,158.28) ;
+
+
+    %Straight Lines [id:da43510107189568403]
+    \draw    (263.72,123.76) -- (263.72,159.01) ;
+
+
+    %Straight Lines [id:da870112518742187]
+    \draw    (104.69,96.89) -- (104.69,159.01) ;
+
+
+    %Straight Lines [id:da7118755411060291]
+    \draw    (76.37,123.03) -- (76.37,158.28) ;
+
+
+    %Straight Lines [id:da5458835417112795]
+    \draw    (354.3,158.76) -- (652.22,158.62) ;
+    \draw [shift={(654.22,158.62)}, rotate = 539.97] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+    %Straight Lines [id:da9707531559367939]
+    \draw    (499.54,201.46) -- (499.54,20.46) ;
+    \draw [shift={(499.54,18.46)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+    %Curve Lines [id:da7160155620764377]
+    \draw    (392.3,136.06) .. controls (454.3,49.06) and (557.3,-5.34) .. (609.3,135.06) ;
+
+
+
+    % Text Node
+    \draw (74.19,110.35) node  [align=left] {$\displaystyle p_{1}$};
+    % Text Node
+    \draw (101.78,87.11) node  [align=left] {$\displaystyle p_{2}$};
+    % Text Node
+    \draw (131.74,60.07) node  [align=left] {$\displaystyle p_{3}$};
+    % Text Node
+    \draw (199.99,45.81) node  [align=left] {$\displaystyle p_{4}$};
+    % Text Node
+    \draw (231.05,82.76) node  [align=left] {$\displaystyle p_{5}$};
+    % Text Node
+    \draw (263,108.17) node  [align=left] {$\displaystyle p_{n}$};
+    % Text Node
+    \draw (76.19,171.35) node  [align=left] {$\displaystyle q_{1}$};
+    % Text Node
+    \draw (103.78,170.11) node  [align=left] {$\displaystyle q_{2}$};
+    % Text Node
+    \draw (136.74,169.07) node  [align=left] {$\displaystyle q_{3}$};
+    % Text Node
+    \draw (199.99,166.81) node  [align=left] {$\displaystyle q_{4}$};
+    % Text Node
+    \draw (232.99,169.81) node  [align=left] {$\displaystyle q_{5}$};
+    % Text Node
+    \draw (264.99,169.81) node  [align=left] {$\displaystyle q_{n}$};
+    % Text Node
+    \draw (319.99,173.81) node  [align=left] {$\displaystyle q$};
+    % Text Node
+    \draw (155.99,16.81) node  [align=left] {$\displaystyle p$};
+    % Text Node
+    \draw (487.99,16.81) node  [align=left] {$\displaystyle p$};
+    % Text Node
+    \draw (644.99,174.81) node  [align=left] {$\displaystyle q$};
+    % Text Node
+    \draw (392.99,173.81) node  [align=left] {$\displaystyle a$};
+    % Text Node
+    \draw (610.99,174.81) node  [align=left] {$\displaystyle b$};
+    % Text Node
+    \draw (575.99,39.81) node  [align=left] {$\displaystyle p=p_{u}( q)$};
+    % Text Node
+    \draw (251.99,38.81) node  [align=left] {$\displaystyle p=p_{u}( q_{j})$};
+    % Text Node
+    \draw (159,210) node  [align=left] {$\displaystyle \text{Дискретная случайная переменная}$};
+    % Text Node
+    \draw (505,210) node  [align=left] {$\displaystyle \text{Непрерывная случайная переменная}$};
+
+
+    \end{tikzpicture}
+  \end{center}
+\end{figure}
+
+Закон распределения случайной переменной называют \textit{диффиренциальным законом или вероятностной функцией, }\textit{а в ситуации непрерывной случайно велечины - плотностью вероятности.}
+
+\textit{Замечание}\textit{. Случайная велечина }$\displaystyle u$\textit{ называется непрерывной, если множество её возможных значений есть некоторый интервал числовой прямой, а вероятность появления в опыте каждого конкретного значение равна 0.}
+
+\textbf{Законы распределения используемые в эконометрике.}
+
+Первый закон в эконометрике (самый важный) - это нормальный закон (Муавра-Гаусса). Имеет уравнение (2.9)
+\begin{equation*}
+{\displaystyle f(x)=\frac{1}{\sigma \sqrt{2\pi }} \ e^{-\frac{(x-\mu )^{2}}{2\sigma ^{2}}} ,}
+\end{equation*}
+Второй закон называется законом распределения Стьюдента или $\displaystyle t-$распределение. Символом $\displaystyle m$ обозначено кол-во степеней свободы (при $\displaystyle m\  >\ 30$ почти сопадает с нормальным).
+\begin{equation*}
+{\displaystyle f_{t} (y)=\frac{\Gamma \left(\frac{n+1}{2}\right)}{\sqrt{n\pi } \ \Gamma \left(\frac{n}{2}\right)} \ \left( 1+\frac{y^{2}}{n}\right)^{-\frac{n+1}{2}}}
+\end{equation*}
+Третий закон распределения Фишера. Это закон зависит от двух констант $\displaystyle ( m,n)$, которые называются степенями свободы.
+\begin{equation*}
+{\displaystyle P_{F}( x) =\frac{\sqrt{\frac{(d_{1} \ x)^{d_{1}} \ \ d^{d_{2}}_{2}}{(d_{1} \ x+d_{2} )^{d_{1} +d_{2}}}}}{x\ \mathrm{B}\left(\frac{d_{1}}{2} ,\frac{d_{2}}{2}\right)}}
+\end{equation*}
+Четвёртый закон распределения Хи-квадрат. В этом законе присутствует константа $\displaystyle m$, которая называется колическтвом степеней свободы.
+\begin{equation*}
+{\displaystyle P\chi ^{2}( x) =\frac{(1/2)^{k/2}}{\Gamma (k/2)} x^{k/2-1} e^{-x/2}}
+\end{equation*}
+Отметим функции Excel, которые обозначают эти законы:
+\begin{enumerate}
+\item НОРМРАСП();
+\item СТЬЮДРАСП();
+\item FРАСП();
+\item ХИ2РАСП();
+\end{enumerate}
+\begin{center}
+\textbf{Характеристики вероятности взаимосвязи двух случайных переменных}
+\end{center}
+Пусть $\displaystyle x$ и $\displaystyle y$ пара случайных переменных (пример: опыт состоит в бросании игральной кости $\displaystyle x-$это очнки которые выпадают на нижних гранях, а $\displaystyle y-$на верхней). Характеристика взаимосвязи расчитывается по формуле и называется ковариацией:
+\begin{equation*}
+Cov( x,y) =\sigma _{x,\ y} =E( x\cdot y) \ -E( x) \cdot E( y)
+\end{equation*}
+Если ковариация положительная, то с ростом $\displaystyle x$ возрастает $\displaystyle y$ и наоборот. Если $\displaystyle x$ и $\displaystyle y$ независимые, то ковариация равна 0.
+
+$\displaystyle \boxed{\text{ДЗ}}$ Можно показать, что ковариация очков на нижней и верхней грани равна $\displaystyle -\frac{35}{12}$. Нормированная ковариация вычисляется по формуле и носит название коэффициента корреляции:
+\begin{equation*}
+Cor( x,\ y) \ =\rho _{x,y} \ =\frac{\sigma _{x,\ y}}{\sigma _{x} \cdot \sigma _{y}}
+\end{equation*}
+Вернёмся к основным характеристикам случайного вектора рассмотреным на лекции (6). Пусть случайным вектором является вектор случайных возмущений в уравнениях наблюдения объекта в схеме Гаусса-Матрока (смотри семинар (6)). Рассмотрим фактаризацию его ковариционной матрицы:
+\begin{equation*}
+Cov\left(\vec{x} ,\ \vec{x}\right) \ =\ \sigma ^{2}_{0} \cdot \begin{pmatrix}
+\sigma ^{2}_{1} /\sigma ^{2}_{0} & \sigma ^{2}_{12} /\sigma ^{2}_{0} & \dotsc  & \sigma ^{2}_{1n} /\sigma ^{2}_{0}\\
+\sigma ^{2}_{21} /\sigma ^{2}_{0} & \sigma ^{2}_{2} /\sigma ^{2}_{0} & \dotsc  & \sigma ^{2}_{2n} /\sigma ^{2}_{0}\\
+\dotsc  & \dotsc  & \dotsc  & \dotsc \\
+\sigma ^{2}_{1n} /\sigma ^{2}_{0} & \sigma ^{2}_{2n} /\sigma ^{2}_{0} & \dotsc  & \sigma ^{2}_{n} /\sigma ^{2}_{0}
+\end{pmatrix} \ =\sigma ^{2}_{0} \cdot Q
+\end{equation*}
+Матрицу $\displaystyle Q$ весовых коэффициентов мы обозначим $\displaystyle P^{-1}$.
+
+\textbf{Вывод: }У случайной переменной есть две основные характеристки (две константы), взаимосвязь случайных переменных описывается их ковариацией и ковариации компонент случайного вектора заполняют его ковариационную матрицу.
+\begin{center}
+\textbf{Доказательство теоремы Гаусса-Маркова}
+\end{center}
+Приступаем к доказательству утверждений теоремы Гаусса-Маркова. Мы расширим предпосылки с номерами 2 и 3 этой теоремы отказавшись от них и предполагая, что вектор случайных возмущений $\displaystyle \vec{u}$ имеет нулевое математическое ожидание и ковариционную матрицу $\displaystyle Cov\ \left(\vec{u} ,\vec{u}\right) =\sigma ^{2}_{0} \cdot P^{-1}$.
+
+Докажем утверждение A:
+
+A. 1) Мы будем разыскивать оценку вектора $\displaystyle \vec{a}$ в классе всех линейных функций определённых на векторе значений эндогенной переменной $\displaystyle \vec{y}$, так что определению подлежит матрица $\displaystyle M$ этого линейного преобразования мы собираемся разыскать $\displaystyle M$.
+\begin{equation*}
+\widetilde{\vec{a}} =M\cdot \vec{y}
+\end{equation*}
+2) Поиск матрицы $\displaystyle M$ удобно осуществить создавая оптимальную статистическую процедуру оцениевания значения $\displaystyle y_{0}$ произвольной линейной функцией вектора коэффициентов модели
+\begin{equation*}
+y_{0} =\vec{x}^{T}_{0} \cdot \vec{a}
+\end{equation*}
+3) Процедуру оценивания числа $\displaystyle y_{0}$ мы будем отыскивать в классе линейных функций $\displaystyle \vec{y}$, где $\displaystyle \vec{m} -$это строка линейных коэффициентов.
+\begin{equation*}
+\widetilde{y_{0}} \ =\overrightarrow{m_{0}} \ \cdot \vec{y}
+\end{equation*}
+И будем отыскивать опираясь на два требования оптимальности:
+\begin{equation*}
+\begin{cases}
+E\left(\tilde{y}_{0}\right) =y_{0} =\vec{x}^{T}_{0} \cdot \vec{a}\\
+Var\left(\tilde{y}_{0}\right) \ \rightarrow \min
+\end{cases}
+\end{equation*}
+Вычислим мат ожидание символа $\displaystyle \tilde{y}_{0}$. Первое требование оптимальности приводит к следующим уравению отностительно искомых коэффициентов $\displaystyle \vec{m}$:
+\begin{equation*}
+E\left(\tilde{y}_{0}\right) =\vec{m} \cdot X\cdot \vec{a} ,\ \Rightarrow \vec{m}^{T} \ \cdot X\ =\ \overrightarrow{a\ } \ =\vec{x}^{T}_{0} \cdot \vec{a}
+\end{equation*}
+Теперь найдём дисперсию опираясь на следующее выражение: $\displaystyle Cov\ \left(\vec{u} ,\vec{u}\right) =\sigma ^{2}_{0} \cdot P^{-1}$.
+
+Значит дисперсия: $\displaystyle Var\left(\tilde{y}_{0}\right) =\sigma ^{2}_{0} \ \cdot \vec{m}^{T} \cdot P^{-1} \ \cdot \vec{m}$
+
+Cледовательно искомые оценки коэффициентов нужно найти в процессе решения следующей оптимизационной задачи:
+\begin{equation*}
+\begin{cases}
+\vec{m}^{T} \cdot P^{-1} \ \cdot \vec{m} \ \rightarrow \min\\
+X^{T} \cdot \vec{m} \ =\ \vec{x}_{0}
+\end{cases}
+\end{equation*}
+\end{center}
+\end{document}
