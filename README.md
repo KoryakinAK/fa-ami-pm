@@ -8,6 +8,7 @@
     - [Экзамен](econometrics/econometric1/exam)
   - Второй семестр
     - [Семинары](econometrics/econometric2/sem)
+    - [Лекции](econometrics/econometric2/lec)
 - Моделирование микроэкономических процессов (в редакторе [Mathcha](https://www.mathcha.io/editor/JemKcm9fxMtrXIrD))
   - [Конспекты](micro)
   - [Домашние работы](micro/HW)
