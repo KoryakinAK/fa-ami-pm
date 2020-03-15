@@ -1,7 +1,7 @@
 # Лекции и семинары ФУ ПМиТ 
 
 ## Предметы:
-- Эконометрика (в редакторе [Mathcha](https://www.mathcha.io/editor/BkxVcXVinqu3rUQ5))
+- Эконометрика
   - Первый семестр
     - [Конспекты](econometrics/econometric1)
     - [Домашние работы](econometrics/econometric1/HW)
@@ -9,7 +9,7 @@
   - Второй семестр
     - [Семинары](econometrics/econometric2/sem)
     - [Лекции](econometrics/econometric2/lec)
-- Моделирование микроэкономических процессов (в редакторе [Mathcha](https://www.mathcha.io/editor/JemKcm9fxMtrXIrD))
+- Моделирование микроэкономических процессов
   - [Конспекты](micro)
   - [Домашние работы](micro/HW)
   - [Экзамен](econometrics/exam)
@@ -23,3 +23,5 @@
   - [Семинары](finmath/sem)
   - [Лекции](finmath/lec)
   - [Домашние работы](finmath/hw)
+- Теория сложных сетей в экономике
+  - [Домашние работы](NetworkX/hw)
